@@ -1,0 +1,82 @@
+body {
+   margin: 0;
+   /* font-family: 'Noto Sans KR', sans-serif; */
+   font-family: 'Montserrat', sans-serif;
+   overflow-x: hidden;
+}
+
+header {
+   display: flex;
+   justify-content: space-between;
+   padding-left: 20px;
+   padding-right: 20px;
+   background-color: #303030;
+}
+
+a{
+   text-decoration: none;
+   color: black;
+}
+
+.logo {
+   color: #ffcd4a;
+   /* font-family: 'Montserrat', sans-serif; */
+   font-weight: 300;
+}
+
+.navbar {
+   width: 100%;
+   visibility: hidden;
+   z-index: 1;
+   position: absolute;
+   right: 0;
+   margin: 0;
+   background-color: #303030;
+   padding: 20px;
+}
+
+.navbar-btn {
+   font-size: 2rem;
+   color: #ffcd4a;
+   padding: 20px;
+}
+
+.navbar-btn:hover {
+   cursor: pointer;
+   transform: scale(1.1);
+}
+
+.navbar li {
+   /* font-family: 'Montserrat', sans-serif; */
+   font-weight: 700;
+   font-size: 5rem;
+   text-align: center;
+   list-style: none;
+   margin-bottom: 30px;
+}
+
+.navbar li:hover {
+   cursor: pointer;
+   transition: all 0.5s;
+   color: #ffcd4a;
+}
+
+.open{
+   visibility: visible;
+   transition: all 0.8s;
+   transform: translateY(0px);
+}
+
+.close{
+   visibility: hidden;
+   transition: all 1s;
+   transform: translateY(-2000px);
+}
+
+.copyright{
+   text-align: right;
+   background-color: #303030;
+   font-weight: 300;
+   color: #ffcd4a;
+   padding: 10px;
+}
