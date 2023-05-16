@@ -50,9 +50,12 @@
       </ul>
    </nav>
 
-   <!-- <div class="bg-show">
-      <button class="btn"><i class="fa-solid fa-eye"></i></button>
-   </div> -->
+   <div class="bg-show">
+      <i class="btn off fa-solid fa-toggle-off fa-2x"></i>
+      <i class="btn on fa-solid fa-toggle-on fa-2x"  style="display: none;"></i>
+   </div>
+
+   <div class="snow-container"></div>
    
    <main class="profile-container">
       <div class="profile-card">
@@ -111,7 +114,7 @@
          </div>
       </div>
    </main>
-      
+
 
    <footer>
       <div class="copyright">Copyright © Song. All Rights Reserved.</div>
@@ -121,6 +124,17 @@
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous">
       </script>
    <script>
+      function makeSnow() {
+         w = Math.random() * window.screen.width;
+         t = Math.random() * 10;
+         const snowBox = `<div class="snow" style="left:${w}px; animation-delay:${t}s"></div>`;
+         $('.snow-container').append(snowBox);
+      }
+
+      for(let i = 0; i < 50; i++){
+         makeSnow();
+      }
+
       let cnt = 0;
       $('.navbar-btn').click(function () {
          cnt++;
@@ -134,20 +148,32 @@
          }
       })
 
-      $('.info').click(function(e){
+      $('.info').click(function (e) {
          console.log(e.target.nextElementSibling)
          $(e.target.nextElementSibling).toggleClass('text-opacity');
       })
 
       let cnt2 = 0;
-      $('.btn').click(function(){
-         if(cnt2 % 2 == 0){
-            $('.profile-card').css('visibility', 'hidden');
-            $('.btn').html('<i class="fa-solid fa-eye-slash"></i>');
+      $('.btn').click(function () {
+         if (cnt2 % 2 == 0) {
+            //$('.profile-card').css('visibility', 'hidden');
+            $('.on').css('display', 'block');
+            $('.off').css('display', 'none');
+            $('.minji').css('background-image', 'url(../img/profileChange1.jpg)');
+            $('.hanni').css('background-image', 'url(../img/profileChange2.jpg)');
+            $('.danielle').css('background-image', 'url(../img/profileChange3.jpg)');
+            $('.haerin').css('background-image', 'url(../img/profileChange4.jpg)');
+            $('.hyein').css('background-image', 'url(../img/profileChange5.jpg)');
          }
-         else{
-            $('.profile-card').css('visibility', 'visible');
-            $('.btn').html('<i class="fa-solid fa-eye"></i>');
+         else {
+            //$('.profile-card').css('visibility', 'visible');
+            $('.on').css('display', 'none');
+            $('.off').css('display', 'block');
+            $('.minji').css('background-image', 'url(../img/profile1.jpg)');
+            $('.hanni').css('background-image', 'url(../img/profile2.jpg)');
+            $('.danielle').css('background-image', 'url(../img/profile3.jpg)');
+            $('.haerin').css('background-image', 'url(../img/profile4.jpg)');
+            $('.hyein').css('background-image', 'url(../img/profile5.jpg)');
          }
          cnt2++;
       })
