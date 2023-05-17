@@ -1,0 +1,77 @@
+.discography-container{
+   height: 100vh;
+}
+
+.discography{
+   display: flex;
+   position: relative;
+   width: 100%;
+   height: 100%;
+}	
+.discography::after{
+   content: "";
+   background-image: url(../img/album1.jpg);
+   background-size: cover;
+   filter: brightness(50%);
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+}
+
+.left, .right{
+   z-index: 2;
+   font-size: 100px;
+   position: absolute;
+   color: cornflowerblue;
+   cursor: pointer;
+}
+.left{
+   left: 1%;
+}
+.right{
+   right: 1%;
+}
+
+.left:hover{
+   transform: scale(1.1);
+   transition: all 0.3s;
+}
+.right:hover{
+   transform: scale(1.1);
+   transition: all 0.3s;
+}
+
+.album-container{
+   /* border: 5px solid black; */
+   margin: auto;
+   margin-right: 3000px;
+}
+
+.album{
+   width: 500px;
+   height: 500px;
+   border-radius: 5px;
+   z-index: 1;
+   left: 450px;
+   position: relative;
+   transform: translateX(0px);
+   /* transform: translateX(-3500px); */
+   /* transform: translateX(-7000px); */
+   /* transform: translateX(-10500px);  */
+   transition: all 1s;
+}
+
+.album1{
+   background-image: url(../img/album1.jpg);
+}
+.album2{
+   background-image: url(../img/album2.jpg);
+}	
+.album3{
+   background-image: url(../img/album3.jpg);
+}	
+.album4{
+   background-image: url(../img/album4.jpg);
+}	
