@@ -8,8 +8,11 @@
    width: 100%;
    height: 100%;
 }	
-.discography::after{
+
+.discography::before{
    content: "";
+   width: 100%;
+   height: 100%;
    background-image: url(../img/album1.jpg);
    background-size: cover;
    filter: brightness(50%);
@@ -21,7 +24,7 @@
 }
 
 .left, .right{
-   z-index: 2;
+   z-index: 3;
    font-size: 100px;
    position: absolute;
    color: cornflowerblue;
@@ -44,23 +47,43 @@
 }
 
 .album-container{
-   /* border: 5px solid black; */
+   /* width: 100%; */
+   display: flex;
    margin: auto;
-   margin-right: 3000px;
+   margin-right: 1500px;
 }
 
 .album{
-   width: 500px;
+   cursor: pointer;
+   min-width: 500px;
    height: 500px;
    border-radius: 5px;
    z-index: 1;
    left: 450px;
    position: relative;
-   transform: translateX(0px);
-   /* transform: translateX(-3500px); */
-   /* transform: translateX(-7000px); */
-   /* transform: translateX(-10500px);  */
    transition: all 1s;
+}
+
+.album-info{
+   /* display: none; */
+   z-index: 0;
+   width: 510px;
+   background-color: #303030;
+   position: relative;
+   text-align: center;
+   color: white;
+   border-radius: 15px;
+   border-collapse: collapse;
+   font-size: 1.5rem;
+   font-weight: 300;
+   left: 0;
+   transition: all 0.5s;
+   /* transform: translateX(430px); */
+   /* right: 0; */
+}
+
+.album-info tr:not(:last-of-type){
+   border-bottom: 1px solid whitesmoke;
 }
 
 .album1{
