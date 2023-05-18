@@ -54,15 +54,119 @@
          </div>
          <div class="album-container">
             <div class="album album1"></div>
+            <table class="album-info">
+               <th>Track</th>
+               <th>곡명</th>
+               <th>가수</th>
+               <tr>
+                  <td>1</td>
+                  <td>Attention</td>
+                  <td>NewJeans</td>
+               </tr>
+               <tr>
+                  <td>2</td>
+                  <td>Hype boy</td>
+                  <td>NewJeans</td>
+               </tr>
+               <tr>
+                  <td>3</td>
+                  <td>Cookie</td>
+                  <td>NewJeans</td>
+               </tr>
+               <tr>
+                  <td>4</td>
+                  <td>Hurt</td>
+                  <td>NewJeans</td>
+               </tr>
+
+            </table>
          </div>
          <div class="album-container">
             <div class="album album2"></div>
+            <table class="album-info">
+               <th>Track</th>
+               <th>곡명</th>
+               <th>가수</th>
+               <tr>
+                  <td>1</td>
+                  <td>Attention</td>
+                  <td>NewJeans</td>
+               </tr>
+               <tr>
+                  <td>2</td>
+                  <td>Hype boy</td>
+                  <td>NewJeans</td>
+               </tr>
+               <tr>
+                  <td>3</td>
+                  <td>Cookie</td>
+                  <td>NewJeans</td>
+               </tr>
+               <tr>
+                  <td>4</td>
+                  <td>Hurt</td>
+                  <td>NewJeans</td>
+               </tr>
+
+            </table>
          </div>
          <div class="album-container">
             <div class="album album3"></div>
+            <table class="album-info">
+               <th>Track</th>
+               <th>곡명</th>
+               <th>가수</th>
+               <tr>
+                  <td>1</td>
+                  <td>Attention</td>
+                  <td>NewJeans</td>
+               </tr>
+               <tr>
+                  <td>2</td>
+                  <td>Hype boy</td>
+                  <td>NewJeans</td>
+               </tr>
+               <tr>
+                  <td>3</td>
+                  <td>Cookie</td>
+                  <td>NewJeans</td>
+               </tr>
+               <tr>
+                  <td>4</td>
+                  <td>Hurt</td>
+                  <td>NewJeans</td>
+               </tr>
+
+            </table>
          </div>
          <div class="album-container">
             <div class="album album4"></div>
+            <table class="album-info">
+               <th>Track</th>
+               <th>곡명</th>
+               <th>가수</th>
+               <tr>
+                  <td>1</td>
+                  <td>Attention</td>
+                  <td>NewJeans</td>
+               </tr>
+               <tr>
+                  <td>2</td>
+                  <td>Hype boy</td>
+                  <td>NewJeans</td>
+               </tr>
+               <tr>
+                  <td>3</td>
+                  <td>Cookie</td>
+                  <td>NewJeans</td>
+               </tr>
+               <tr>
+                  <td>4</td>
+                  <td>Hurt</td>
+                  <td>NewJeans</td>
+               </tr>
+
+            </table>
          </div>
       </div>
    </main>
@@ -91,7 +195,7 @@
 
       let l = 0;
       $('.left').click(function(){
-         r -= 3500;
+         r -= 2510;
          console.log('left')
          if(r >= 0){
             $('.album').css('transform', `translateX(-${r}px)`);
@@ -103,10 +207,20 @@
 
       let r = 0;
       $('.right').click(function(){
-         r += 3500;
+         $.get('./album.json')
+         .done(function(data){
+            console.log(data);
+         })
+         .fail(function(err){
+            console.log('요청 실패');
+         })
+
+
+         r += 2510;
          console.log('right')
-         if(r <= 10500){
+         if(r <= 7530){
             $('.album').css('transform', `translateX(-${r}px)`);
+            $('discography::after').css('background-image', 'url(../img/album2.jpg)')
          }
          else{
             r = 0;
@@ -114,6 +228,19 @@
          }
       })
    
+      let cnt3 = 0
+      $('.album').click(function(e){
+         console.log(e.target)
+         cnt3++;
+         if(cnt3 % 2 != 0){
+            $('.album-info').css('width', '800px');
+            $('.album-info').css('transform', 'translateX(430px)');
+         }
+         else{
+            $('.album-info').css('width', '510px');
+            $('.album-info').css('transform', 'translateX(0)');
+         }
+      })
    </script>
 </body>
 
