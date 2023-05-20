@@ -5,11 +5,14 @@
 .discography{
    display: flex;
    position: relative;
+   background-image: url(../img/album1.jpg);
+   background-size: cover;
    width: 100%;
    height: 100%;
+   transition: all 1s;
 }	
 
-.discography::before{
+/* .discography::before{
    content: "";
    width: 100%;
    height: 100%;
@@ -21,14 +24,56 @@
    bottom: 0;
    left: 0;
    right: 0;
+} */
+
+.album-ex-container{
+   overflow-y: scroll;
+   visibility: hidden;
+   opacity: 0;
+   width: 99%;
+   height: 90%;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   margin: auto;
+   position: absolute;
+   z-index: 3;
+   background-color: #303030;
+   border-radius: 10px;
+}
+
+.text{
+   padding: 50px;
+   font-size: 1.3rem;
+   line-height: 2rem;
+   font-family: 'Noto Sans KR', sans-serif;
+   color: whitesmoke;
+   padding: 0 100px 50px 100px;
+}
+
+.x{
+   text-align: right;
+   cursor: pointer;
+}
+
+.x:hover{
+   transform: scale(1.3);
+   transition: all 0.5s;
+}
+
+
+.left-right-btn{
+   margin: auto;
 }
 
 .left, .right{
-   z-index: 3;
+   z-index: 2;
    font-size: 100px;
    position: absolute;
    color: cornflowerblue;
    cursor: pointer;
+   transition: all 1s;
 }
 .left{
    left: 1%;
@@ -47,10 +92,15 @@
 }
 
 .album-container{
-   /* width: 100%; */
    display: flex;
    margin: auto;
    margin-right: 1500px;
+   transition: all 1s;
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
 }
 
 .album{
@@ -59,27 +109,28 @@
    height: 500px;
    border-radius: 5px;
    z-index: 1;
-   left: 450px;
+   left: 30%;
    position: relative;
    transition: all 1s;
 }
 
 .album-info{
-   /* display: none; */
+   cursor: pointer;
    z-index: 0;
-   width: 510px;
+   width: 800px;
    background-color: #303030;
    position: relative;
    text-align: center;
    color: white;
+   padding: 30px;
    border-radius: 15px;
    border-collapse: collapse;
    font-size: 1.5rem;
    font-weight: 300;
    left: 0;
-   transition: all 0.5s;
-   /* transform: translateX(430px); */
-   /* right: 0; */
+   transition: all 1s;
+   transform: translateX(380px);
+   filter: brightness(60%);
 }
 
 .album-info tr:not(:last-of-type){
