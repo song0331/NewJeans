@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./css/home.css">
+   <link rel="stylesheet" href="./css/gallery.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Noto+Sans+KR:wght@400;700&display=swap"
+      rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <title>NewJeans</title>
+</head>
+
+<body>
+   <header>
+      <a href="/">
+         <h2 class="logo">NewJeans</h2>
+      </a>
+      <i class="fa-solid fa-bars navbar-btn"></i>
+   </header>
+
+   <nav>
+      <ul class="navbar close">
+         <a href="/">
+            <li>HOME</li>
+         </a>
+         <a href="./profile.html">
+            <li>PROFILE</li>
+         </a>
+         <a href="./discography.html">
+            <li>DISCOGRAPHY</li>
+         </a>
+         <a href="./gallery.html">
+            <li>GALLERY</li>
+         </a>
+         <a href="./video.html">
+            <li>VIDEO</li>
+         </a>
+         <!-- <li>PROFILE</li>
+         <li>DISCOGRAPHY</li>
+         <li>GALLERY</li>
+         <li>VIDEO</li> -->
+      </ul>
+   </nav>
+
+   <main class="gallery-container">
+
+      <div class="title-container">
+         <div class="title">GALLERY</div>
+      </div>
+
+      <div class="img-container"></div>
+
+      <div style="text-align: center;">
+         <div class="more-btn">
+            <button class="Ditto">Ditto</button>
+            <button class="OMG">OMG</button>
+            <button class="Etc">Etc</button>
+         </div>
+      </div>
+
+   </main>
+
+   <footer>
+      <div class="copyright">Copyright © Song. All Rights Reserved.</div>
+   </footer>
+
+   <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous">
+      </script>
+   <script>
+      let cnt = 0;
+      $('.navbar-btn').click(function () {
+         cnt++;
+         if (cnt % 2 != 0) {
+            $('.navbar').addClass('open')
+            $('.navbar').removeClass('close')
+         }
+         else {
+            $('.navbar').addClass('close')
+            $('.navbar').removeClass('open')
+         }
+      })
+
+      let zIdx = 0;
+      $(document).on('click', '.img', function (e) {
+         $(e.target).toggleClass('full')
+         if (e.target.dataset.onoff == 1) {
+            e.target.dataset.onoff = '0'
+         }
+         else {
+            zIdx++;
+            e.target.dataset.onoff = '1'
+            $(e.target).css('z-index', `${zIdx}`);
+         }
+      })
+
+      function imgData(title){
+         $.get(`./${title}.json`)
+         .done(function (data) {
+            for (let i = 0; i < data.length; i++) {
+               let img =
+                  `<div class="img-box ${title}">
+                  <img class="img full" src="${data[i].name}" data-onoff="1" alt="">
+               </div>`
+               $('.img-container').append(img)
+            }
+         })
+         .fail(function () {
+            console.log('ajax 실패!');
+         })
+      }
+
+      function removeImg(){
+         $('.ditto').remove();
+         $('.omg').remove();
+         $('.etc').remove();
+      }
+
+      imgData('ditto');
+      
+      $('.Ditto').click(function () {
+         removeImg()
+         imgData('ditto');
+      })
+      $('.OMG').click(function () {
+         removeImg()
+         imgData('omg');
+      })
+      $('.Etc').click(function () {
+         removeImg()
+         imgData('etc');
+      })
+
+
+   </script>
+</body>
+
+</html>
