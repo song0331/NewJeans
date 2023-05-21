@@ -1,0 +1,64 @@
+.video-container{
+   background-color: #3a3a3a;
+}
+
+.mv-show{
+   text-align: center;
+   padding: 50px;
+}
+
+.mv-show iframe{
+   border-radius: 10px;
+   box-shadow: 0px 0px 5px 1px whitesmoke;
+}
+
+.mv-list::-webkit-scrollbar {
+   height: 20px;  /* 스크롤바의 너비 */
+}
+
+.mv-list::-webkit-scrollbar-thumb {
+   background: whitesmoke; /* 스크롤바의 색상 */
+   border-radius: 15px;
+}
+
+/*스크롤바 뒷 배경 색상*/
+.mv-list::-webkit-scrollbar-track {
+   background: rgba(255, 255, 255, 0.5);
+   border-radius: 15px;
+}
+
+.mv-list{
+   width: 80%;
+   overflow-x: scroll;
+   padding: 50px;
+   display: flex;
+   margin: auto;
+   border-radius: 15px;
+}
+
+.mv-list img{
+   cursor: pointer;
+   min-width: 560px;
+   height: 315px;
+   margin: 0px 40px 0px 40px;
+   box-shadow: 5px 5px 5px 5px black;
+   border-radius: 20px;
+}
+
+.mv-list-item:hover{
+   transform: scale(1.03);
+   transition: all 0.5s;
+}
+
+.title{
+   color: whitesmoke;
+   text-align: center;
+   padding-bottom: 15px;
+   font-size: 1rem;
+   font-weight: 700;
+}
+
+
+/* https://img.youtube.com/vi/eKZzOcgN4AI/0.jpg //상하여백 있음
+https://img.youtube.com/vi/eKZzOcgN4AI/mqdefault.jpg  //상하여백 없음
+https://img.youtube.com/vi/eKZzOcgN4AI/maxresdefault.jpg //최대 크기, 퀄리티 */
