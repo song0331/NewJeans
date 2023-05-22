@@ -20,7 +20,7 @@
 
 <body>
    <header>
-      <a href="/">
+      <a href="./index.html">
          <h2 class="logo">NewJeans</h2>
       </a>
       <i class="fa-solid fa-bars navbar-btn"></i>
@@ -28,7 +28,7 @@
 
    <nav>
       <ul class="navbar close">
-         <a href="/">
+         <a href="./index.html">
             <li>HOME</li>
          </a>
          <a href="./profile.html">
@@ -54,11 +54,18 @@
 
       <div class="title-container">
          <div class="title">GALLERY</div>
+         <div style="text-align: center;" class="mobile">
+            <div class="more-btn">
+               <button class="Ditto">Ditto</button>
+               <button class="OMG">OMG</button>
+               <button class="Etc">Etc</button>
+            </div>
+         </div>
       </div>
 
       <div class="img-container"></div>
 
-      <div style="text-align: center;">
+      <div style="text-align: center;" class="pc">
          <div class="more-btn">
             <button class="Ditto">Ditto</button>
             <button class="OMG">OMG</button>
@@ -69,6 +76,20 @@
    </main>
 
    <footer>
+      <div class="sns">
+         <a href="https://www.instagram.com/newjeans_official/" title="Instargram" target="_blank">
+            <i class="fa-brands fa-instagram fa-xl"></i>
+         </a>
+         <a href="https://twitter.com/NewJeans_ADOR" title="Twitter" target="_blank">
+            <i class="fa-brands fa-twitter fa-xl"></i>
+         </a>
+         <a href="https://www.youtube.com/channel/UCMki_UkHb4qSc0qyEcOHHJw" title="YouTube" target="_blank">
+            <i class="fa-brands fa-youtube fa-xl"></i>
+         </a>
+         <a href="https://www.tiktok.com/@newjeans_official" title="TikTok" target="_blank">
+            <i class="fa-brands fa-tiktok fa-xl"></i>
+         </a>
+      </div>
       <div class="copyright">Copyright © Song. All Rights Reserved.</div>
    </footer>
 
@@ -108,8 +129,8 @@
             for (let i = 0; i < data.length; i++) {
                let img =
                   `<div class="img-box ${title}">
-                  <img class="img full" src="${data[i].name}" data-onoff="1" alt="">
-               </div>`
+                     <img class="img" src="${data[i].name}" data-onoff="1" alt="">
+                  </div>`
                $('.img-container').append(img)
             }
          })
@@ -124,7 +145,7 @@
          $('.etc').remove();
       }
 
-      imgData('ditto');
+      //imgData('ditto');
       
       $('.Ditto').click(function () {
          removeImg()
@@ -138,6 +159,21 @@
          removeImg()
          imgData('etc');
       })
+
+
+      $.get(`./ditto.json`)
+         .done(function (data) {
+            for (let i = 0; i < data.length; i++) {
+               let img =
+                  `<div class="img-box ditto">
+                  <img class="img" src="${data[i].name}" data-onoff="1" alt="">
+               </div>`
+               $('.img-container').append(img)
+            }
+         })
+         .fail(function () {
+            console.log('ajax 실패!');
+         })
 
 
    </script>
