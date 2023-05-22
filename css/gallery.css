@@ -1,9 +1,9 @@
-.gallery-container{
+.gallery-container {
    height: 100vh;
    background-color: #3a3a3a;
 }
 
-.title{
+.title {
    color: whitesmoke;
    width: 80%;
    padding: 20px;
@@ -14,26 +14,26 @@
    margin: auto;
 }
 
-.img-container{
+.img-container {
    display: flex;
    justify-content: space-evenly;
    flex-wrap: wrap;
    margin: 100px;
 }
 
-.img-box{
+.img-box {
    width: 19%;
    margin: 1px;
 }
 
-.img{
+.img {
    cursor: pointer;
    width: 100%;
    border-radius: 10px;
    border: 2px solid #aaa;
 }
 
-.full{
+.full {
    width: 45%;
    position: absolute;
    top: 0;
@@ -44,18 +44,28 @@
    transition: all 0.5s;
 }
 
-.img:hover{
+.img:hover {
    transform: scale(1.05);
    transition: all 0.4s;
 }
 
-.more-btn{
+.mobile {
+   display: none;
+}
+
+.pc {
+   display: block;
+}
+
+.more-btn {
    width: 100%;
    position: absolute;
    bottom: 0;
 }
 
-.Ditto, .OMG, .Etc{
+.Ditto,
+.OMG,
+.Etc {
    cursor: pointer;
    margin: 0px 10px 0px 10px;
    color: whitesmoke;
@@ -65,7 +75,59 @@
    background-color: #3a3a3a;
 }
 
-button:hover{
+button:hover {
    background-color: whitesmoke;
    color: #3a3a3a;
+}
+
+
+@media screen and (max-width: 479px) {
+   .gallery-container {
+      height: 100%;
+   }
+
+   .title {
+      font-size: 3rem;
+   }
+
+   .img-container {
+      display: flex;
+      flex-direction: column;
+      margin: 50px;
+      margin-bottom: 0;
+   }
+
+   .img-box {
+      width: 100%;
+      margin-bottom: 20px;
+   }
+
+   .img {
+      pointer-events: none;
+   }
+
+   .full {
+      width: 90%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      transition: all 0.5s;
+   }
+
+   .mobile {
+      display: block;
+   }
+
+   .pc {
+      display: none;
+   }
+
+   .more-btn {
+      width: 100%;
+      position: relative;
+      top: 10px;
+   }
 }

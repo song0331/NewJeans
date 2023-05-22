@@ -12,16 +12,22 @@
    box-shadow: 0px 0px 5px 1px whitesmoke;
 }
 
-.mv-list::-webkit-scrollbar {
-   height: 20px;  /* 스크롤바의 너비 */
+.now{
+   width: 760px;
+   height: 415px;
 }
 
+/* 스크롤바의 너비 */
+/* 스크롤바의 색상 */
+/*스크롤바 뒷 배경 색상*/
+
+.mv-list::-webkit-scrollbar {
+   height: 20px; 
+}
 .mv-list::-webkit-scrollbar-thumb {
-   background: whitesmoke; /* 스크롤바의 색상 */
+   background: whitesmoke; 
    border-radius: 15px;
 }
-
-/*스크롤바 뒷 배경 색상*/
 .mv-list::-webkit-scrollbar-track {
    background: rgba(255, 255, 255, 0.5);
    border-radius: 15px;
@@ -38,7 +44,7 @@
 
 .mv-list img{
    cursor: pointer;
-   min-width: 560px;
+   width: 560px;
    height: 315px;
    margin: 0px 40px 0px 40px;
    box-shadow: 5px 5px 5px 5px black;
@@ -62,3 +68,29 @@
 /* https://img.youtube.com/vi/eKZzOcgN4AI/0.jpg //상하여백 있음
 https://img.youtube.com/vi/eKZzOcgN4AI/mqdefault.jpg  //상하여백 없음
 https://img.youtube.com/vi/eKZzOcgN4AI/maxresdefault.jpg //최대 크기, 퀄리티 */
+
+
+@media screen and (max-width: 479px) {
+   .mv-show{
+      padding: 20px;
+   }
+
+   .now{
+      width: auto;
+      height: 300px;
+   }
+   
+   .mv-list{
+      padding: 20px;
+   }
+   
+   .mv-list img{
+      width: 300px;
+      height: 200px;
+      margin: 0px 20px 0px 20px;
+   }
+   
+   .title{
+      font-size: 0.7rem;
+   }
+}

@@ -74,23 +74,23 @@
 }
 
 .minji {
-   background-image: url(../img/profile1.jpg);
+   background-image: url('https://hyunkyu-song.github.io/newjeans/profile/before/0.jpg');
 }
 
 .hanni {
-   background-image: url(../img/profile2.jpg);
+   background-image: url('https://hyunkyu-song.github.io/newjeans/profile/before/1.jpg');
 }
 
 .danielle {
-   background-image: url(../img/profile3.jpg);
+   background-image: url('https://hyunkyu-song.github.io/newjeans/profile/before/2.jpg');
 }
 
 .haerin {
-   background-image: url(../img/profile4.jpg);
+   background-image: url('https://hyunkyu-song.github.io/newjeans/profile/before/3.jpg');
 }
 
 .hyein {
-   background-image: url(../img/profile5.jpg);
+   background-image: url('https://hyunkyu-song.github.io/newjeans/profile/before/4.jpg');
 }
 
 .bg-show {
@@ -119,4 +119,14 @@
 
 @keyframes snow-fall {
    100% {transform: translateY(150vh); opacity: 0;}
+}
+
+
+@media screen and (max-width: 479px){
+   .info{
+      font-size: 5rem;
+   }
+   .text{
+      font-size: 1.5rem;
+   }
 }
