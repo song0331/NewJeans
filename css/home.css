@@ -2,7 +2,7 @@ body {
    margin: 0;
    /* font-family: 'Noto Sans KR', sans-serif; */
    font-family: 'Montserrat', sans-serif;
-   /* overflow-x: hidden; */
+   overflow-x: hidden;
    -ms-user-select: none; 
    -moz-user-select: -moz-none;
    -khtml-user-select: none;
@@ -85,6 +85,7 @@ footer{
    background-color: #303030;
    padding: 10px;
    font-weight: 300;
+   opacity: 0.95;
 }
 
 .sns i{

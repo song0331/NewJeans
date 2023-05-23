@@ -56,14 +56,15 @@
          <div class="title">GALLERY</div>
          <div style="text-align: center;" class="mobile">
             <div class="more-btn">
-               <button class="Ditto">Ditto</button>
-               <button class="OMG">OMG</button>
-               <button class="Etc">Etc</button>
+               <button class="Ditto-m">Ditto</button>
+               <button class="OMG-m">OMG</button>
+               <button class="Etc-m">Etc</button>
             </div>
          </div>
       </div>
 
-      <div class="img-container"></div>
+      <div class="img-container-mobile"></div>
+      <div class="img-container-pc"></div>
 
       <div style="text-align: center;" class="pc">
          <div class="more-btn">
@@ -129,15 +130,33 @@
             for (let i = 0; i < data.length; i++) {
                let img =
                   `<div class="img-box ${title}">
-                     <img class="img" src="${data[i].name}" data-onoff="1" alt="">
+                     <img class="img full" src="${data[i].name}" data-onoff="1" alt="">
                   </div>`
-               $('.img-container').append(img)
+               $('.img-container-pc').append(img)
             }
          })
          .fail(function () {
             console.log('ajax 실패!');
          })
       }
+
+
+      function imgDataMoblie(title){
+         $.get(`./${title}.json`)
+         .done(function (data) {
+            for (let i = 0; i < data.length; i++) {
+               let img =
+                  `<div class="img-box ${title}">
+                     <img class="img" src="${data[i].name}" data-onoff="1" alt="">
+                  </div>`
+               $('.img-container-mobile').append(img)
+            }
+         })
+         .fail(function () {
+            console.log('ajax 실패!');
+         })
+      }
+
 
       function removeImg(){
          $('.ditto').remove();
@@ -161,14 +180,59 @@
       })
 
 
+      $('.Ditto-m').click(function () {
+         removeImg()
+         imgDataMoblie('ditto');
+      })
+      $('.OMG-m').click(function () {
+         removeImg()
+         imgDataMoblie('omg');
+      })
+      $('.Etc-m').click(function () {
+         removeImg()
+         imgDataMoblie('etc');
+      })
+
+
+
+      // $.get(`./ditto.json`)
+      //    .done(function (data) {
+      //       for (let i = 0; i < data.length; i++) {
+      //          let img =
+      //             `<div class="img-box ditto">
+      //             <img class="img full" src="${data[i].name}" data-onoff="1" alt="">
+      //          </div>`
+      //          $('.img-container-pc').append(img)
+      //       }
+      //    })
+      //    .fail(function () {
+      //       console.log('ajax 실패!');
+      //    })
+
+      
       $.get(`./ditto.json`)
+         .done(function (data) {
+            for (let i = 0; i < data.length; i++) {
+               let img =
+                  `<div class="img-box ditto">
+                  <img class="img full" src="${data[i].name}" data-onoff="1" alt="">
+               </div>`
+               $('.img-container-pc').append(img)
+            }
+         })
+         .fail(function () {
+            console.log('ajax 실패!');
+         })
+
+      
+         $.get(`./ditto.json`)
          .done(function (data) {
             for (let i = 0; i < data.length; i++) {
                let img =
                   `<div class="img-box ditto">
                   <img class="img" src="${data[i].name}" data-onoff="1" alt="">
                </div>`
-               $('.img-container').append(img)
+               $('.img-container-mobile').append(img)
             }
          })
          .fail(function () {

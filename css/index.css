@@ -6,109 +6,64 @@
 .main-bg{
    width: 100%;
    height: 100vh;
-   background-position: center;
-   background-size: cover;
-   animation-name: bg-ani;
-   animation-duration: 8s;
-   animation-fill-mode: forwards;
-   font-size: 10rem;
-   font-weight: 700;
    position: relative;
 }
 
-.main-text{
-   color: yellowgreen;
-   text-align: center;
+.main-bg::after{
+   content: "";
+   background-image: url('https://hyunkyu-song.github.io/newjeans/home/10.jpg');
+   filter: brightness(70%);
+   background-size: cover;
    position: absolute;
-   margin: auto; 
+   top: 0;
+   bottom: 0;
    left: 0;
    right: 0;
-   animation-name: name-ani;
-   transform: translateY(-2000px);
-   animation-delay: 6.8s;
-   animation-fill-mode: forwards;
-   animation-duration: 2s;
 }
 
-.ani{
+.title{
+   text-align: center;
+}
+
+.main-text{
+   background-image: linear-gradient(90deg,
+   rgba(247, 0, 255, 0.7), 
+   rgba(251, 0, 255, 0.7), 
+   rgba(255, 0, 4, 0.7), 
+   rgba(0, 128, 0), 
+   rgba(13, 103, 221, 0.7), 
+   rgba(143, 31, 223, 0.7), 
+   rgba(255, 6, 255, 0.7));
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+   width: 100%;
+   z-index: 2;
    position: absolute;
-   transform: translateX(-2000px);
-   animation-fill-mode: forwards;
-   animation-duration: 2.6s;
+   font-size: 15rem;
+   font-weight: 700;
 }
 
-.main-text1{
-   animation-name: name1-ani;
-   animation-delay: 0s;
-}
-.main-text2{
-   animation-name: name2-ani;
-   animation-delay: 1.6s;
-   color: #98b42b;
-}
-.main-text3{
-   animation-name: name3-ani;
-   animation-delay: 3.2s;
-   color: rgb(65, 191, 174);
-}
-.main-text4{
-   animation-name: name4-ani;
-   animation-delay: 4.8s;
-   color: rgb(102, 174, 238);
-}
-.main-text5{
-   animation-name: name5-ani;
-   animation-delay: 6.4s;
-   color: rgb(250, 182, 109);
-}
 
-@keyframes name-ani {
-   50% {transform: translateY(-2000px);}
-   100% {transform: translateY(100px); opacity: 0.7;}
-}
-
-@keyframes name1-ani {
-   50% {transform: translateX(40%); opacity: 1;}
-   100% {transform: translateX(0); opacity: 0;}
-}
-@keyframes name2-ani {
-   50% {transform: translateX(40%); opacity: 1;}
-   100% {transform: translateX(0); opacity: 0;}
-}
-@keyframes name3-ani {
-   50% {transform: translateX(40%); opacity: 1;}
-   100% {transform: translateX(0); opacity: 0;}
-}
-@keyframes name4-ani {
-   50% {transform: translateX(40%); opacity: 1;}
-   100% {transform: translateX(0); opacity: 0;}
-}
-@keyframes name5-ani {
-   50% {transform: translateX(40%); opacity: 1;}
-   100% {transform: translateX(0); opacity: 0;}
-}
-
-@keyframes bg-ani {
-   0% {background-image: url('https://hyunkyu-song.github.io/newjeans/home/0.jpg');}
-   10% {background-image: url('https://hyunkyu-song.github.io/newjeans/home/0.jpg');}
-   20% {background-image: url('https://hyunkyu-song.github.io/newjeans/home/1.jpg');}
-   30% {background-image: url('https://hyunkyu-song.github.io/newjeans/home/2.jpg');}
-   40% {background-image: url('https://hyunkyu-song.github.io/newjeans/home/3.jpg');}
-   50% {background-image: url('https://hyunkyu-song.github.io/newjeans/home/4.jpg');}
-   60% {background-image: url('https://hyunkyu-song.github.io/newjeans/home/5.jpg');}
-   70% {background-image: url('https://hyunkyu-song.github.io/newjeans/home/6.jpg');}
-   80% {background-image: url('https://hyunkyu-song.github.io/newjeans/home/7.jpg');}
-   90% {background-image: url('https://hyunkyu-song.github.io/newjeans/home/8.jpg');}
-   99% {background-image: url('https://hyunkyu-song.github.io/newjeans/home/9.jpg');}
-   100% {background-image: url('https://hyunkyu-song.github.io/newjeans/home/10.jpg');}
-}
 
 
 @media screen and (max-width: 479px){
-   .main-bg{
-      background-size: contain;
+	.main-text{
+      /* display: none; */
+      padding-top: 50%;
+      font-size: 3.5rem;
+      /* background-image: linear-gradient(180deg,
+      rgb(152, 152, 111), rgb(110, 36, 36)); */
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-shadow: 4px 4px 0px #d860fca0, 8px 8px 0px #0011ffe9, 12px 12px 0px #05ef8eca;
    }
-	.main-bg{
-      font-size: 3rem;
+   .main-bg::after{
+      background-image: url('./../mobileBG2.jpg');
+      filter: brightness(60%);
+      /* background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain; */
    }
 }
