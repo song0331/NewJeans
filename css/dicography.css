@@ -29,7 +29,6 @@
 
 .album-container{
    display: flex;
-   /* border: 5px solid yellow; */
 }
 
 .onOff i{
@@ -145,7 +144,7 @@
 }
 
 
-@media screen and (max-width: 479px){
+@media screen and (max-width: 767px){
    .discography-bg{
       background-size: contain;
       background-color: #3a3a3a;   
@@ -171,7 +170,6 @@
       padding-left: 0;
       padding-top: 100%;
       text-align: right;
-      /* background-color: red; */
       color: rgba(58, 172, 73, 0.797);
       z-index: 1;
    }

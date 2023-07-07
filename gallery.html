@@ -124,48 +124,50 @@
          }
       })
 
-      function imgData(title){
+      function imgData(title) {
          $.get(`./${title}.json`)
-         .done(function (data) {
-            for (let i = 0; i < data.length; i++) {
-               let img =
-                  `<div class="img-box ${title}">
+            .done(function (data) {
+               for (let i = 0; i < data.length; i++) {
+                  let img = `
+                  <div class="img-box ${title}">
                      <img class="img full" src="${data[i].name}" data-onoff="1" alt="">
-                  </div>`
-               $('.img-container-pc').append(img)
-            }
-         })
-         .fail(function () {
-            console.log('ajax 실패!');
-         })
+                  </div>
+                  `
+                  $('.img-container-pc').append(img)
+               }
+            })
+            .fail(function () {
+               console.log('ajax 실패!');
+            })
       }
 
 
-      function imgDataMoblie(title){
+      function imgDataMoblie(title) {
          $.get(`./${title}.json`)
-         .done(function (data) {
-            for (let i = 0; i < data.length; i++) {
-               let img =
-                  `<div class="img-box ${title}">
+            .done(function (data) {
+               for (let i = 0; i < data.length; i++) {
+                  let img = `
+                  <div class="img-box ${title}">
                      <img class="img" src="${data[i].name}" data-onoff="1" alt="">
-                  </div>`
-               $('.img-container-mobile').append(img)
-            }
-         })
-         .fail(function () {
-            console.log('ajax 실패!');
-         })
+                  </div>
+                  `
+                  $('.img-container-mobile').append(img)
+               }
+            })
+            .fail(function () {
+               console.log('ajax 실패!');
+            })
       }
 
 
-      function removeImg(){
+      function removeImg() {
          $('.ditto').remove();
          $('.omg').remove();
          $('.etc').remove();
       }
 
       //imgData('ditto');
-      
+
       $('.Ditto').click(function () {
          removeImg()
          imgData('ditto');
@@ -193,30 +195,14 @@
          imgDataMoblie('etc');
       })
 
-
-
-      // $.get(`./ditto.json`)
-      //    .done(function (data) {
-      //       for (let i = 0; i < data.length; i++) {
-      //          let img =
-      //             `<div class="img-box ditto">
-      //             <img class="img full" src="${data[i].name}" data-onoff="1" alt="">
-      //          </div>`
-      //          $('.img-container-pc').append(img)
-      //       }
-      //    })
-      //    .fail(function () {
-      //       console.log('ajax 실패!');
-      //    })
-
-      
-      $.get(`./ditto.json`)
+      $.get(`./ditto.json`) // pc버젼
          .done(function (data) {
             for (let i = 0; i < data.length; i++) {
-               let img =
-                  `<div class="img-box ditto">
+               let img = `
+               <div class="img-box ditto">
                   <img class="img full" src="${data[i].name}" data-onoff="1" alt="">
-               </div>`
+               </div>
+               `
                $('.img-container-pc').append(img)
             }
          })
@@ -224,14 +210,14 @@
             console.log('ajax 실패!');
          })
 
-      
-         $.get(`./ditto.json`)
+      $.get(`./ditto.json`) // mobile버젼
          .done(function (data) {
             for (let i = 0; i < data.length; i++) {
-               let img =
-                  `<div class="img-box ditto">
+               let img = `
+               <div class="img-box ditto">
                   <img class="img" src="${data[i].name}" data-onoff="1" alt="">
-               </div>`
+               </div>
+               `
                $('.img-container-mobile').append(img)
             }
          })

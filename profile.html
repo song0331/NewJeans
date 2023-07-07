@@ -55,8 +55,7 @@
       <i class="btn on fa-solid fa-toggle-on fa-2x"  style="display: none;"></i>
    </div>
 
-   <div class="snow-container"></div>
-   
+   <!-- <div class="snow-container"></div> -->
    
    <main class="profile-container">
       
@@ -76,7 +75,7 @@
          </div>
       </div>
       <div class="profile-card">
-         <div class="profile-img hanni">
+         <div class="profile-img hanni" style="background-position: bottom">
             <div class="info">HANNI</div>
             <div class="text">
                <p>하니 팜</p>
@@ -119,6 +118,7 @@
             </div>
          </div>
       </div>
+
    </main>
 
 
@@ -176,7 +176,6 @@
       let cnt2 = 0;
       $('.btn').click(function () {
          if (cnt2 % 2 == 0) {
-            //$('.profile-card').css('visibility', 'hidden');
             $('.on').css('display', 'block');
             $('.off').css('display', 'none');
             $('.minji').css('background-image', 'url(https://hyunkyu-song.github.io/newjeans/profile/after/0.jpg)');
@@ -186,7 +185,6 @@
             $('.hyein').css('background-image', 'url(https://hyunkyu-song.github.io/newjeans/profile/after/4.jpg)');
          }
          else {
-            //$('.profile-card').css('visibility', 'visible');
             $('.on').css('display', 'none');
             $('.off').css('display', 'block');
             $('.minji').css('background-image', 'url(https://hyunkyu-song.github.io/newjeans/profile/before/0.jpg)');
