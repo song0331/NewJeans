@@ -3,7 +3,7 @@
 https://hyunkyu-song.github.io/NewJeans-/<br><br>
 ![](https://velog.velcdn.com/images/thdgusrbek/post/6a8d2fb8-aa3f-4cad-a5b4-76a6ef0d6e48/image.png)<br><br><br><br>
 
-> # 시연 영상
+> # 시연 영상 (1분 30초)
 https://youtu.be/P6AcuS7lQ5U<br><br><br><br>
 
 > # 사용기술
