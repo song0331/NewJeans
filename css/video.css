@@ -97,15 +97,17 @@ https://img.youtube.com/vi/eKZzOcgN4AI/maxresdefault.jpg //최대 크기, 퀄리
       font-size: 2.5rem;
    }
    .mv-show{
+      margin-top: 30px;
       padding: 20px;
    }
 
    .now{
-      width: 300px;
-      height: 200px;
+      width: 350px;
+      height: 250px;
    }
    
    .mv-list{
+      margin-top: 20px;
       padding: 20px;
    }
    
