@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/profile.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Noto+Sans+KR:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>NewJeans</title>
+  </head>
+
+  <body>
+    <header>
+      <a href="./index.html">
+        <h2 class="logo">NewJeans</h2>
+      </a>
+      <i class="fa-solid fa-bars navbar-btn"></i>
+    </header>
+
+    <nav>
+      <ul class="navbar close">
+        <a href="./index.html">
+          <li>HOME</li>
+        </a>
+        <a href="./profile.html">
+          <li>PROFILE</li>
+        </a>
+        <a href="./discography.html">
+          <li>DISCOGRAPHY</li>
+        </a>
+        <a href="./gallery.html">
+          <li>GALLERY</li>
+        </a>
+        <a href="./video.html">
+          <li>VIDEO</li>
+        </a>
+        <!-- <li>PROFILE</li>
+         <li>DISCOGRAPHY</li>
+         <li>GALLERY</li>
+         <li>VIDEO</li> -->
+      </ul>
+    </nav>
+
+    <div class="bg-show">
+      <i class="btn off fa-solid fa-toggle-off fa-2x"></i>
+      <i class="btn on fa-solid fa-toggle-on fa-2x" style="display: none"></i>
+    </div>
+
+    <!-- <div class="snow-container"></div> -->
+
+    <main class="profile-container">
+      <div class="pageName-container">
+        <div class="pageName">PROFILE</div>
+      </div>
+
+      <div class="profile-card">
+        <div class="profile-img minji">
+          <div class="info">MINJI</div>
+          <div class="text">
+            <p>김민지</p>
+            <p>2004 05 07</p>
+            <p>대한민국</p>
+            <p>ESTJ</p>
+          </div>
+        </div>
+      </div>
+      <div class="profile-card">
+        <div class="profile-img hanni" style="background-position: bottom">
+          <div class="info">HANNI</div>
+          <div class="text">
+            <p>하니 팜</p>
+            <p>2004 10 06</p>
+            <p>호주, 베트남</p>
+            <p>INFP</p>
+          </div>
+        </div>
+      </div>
+      <div class="profile-card">
+        <div class="profile-img danielle">
+          <div class="info">DANIELLE</div>
+          <div class="text">
+            <p>다니엘 마쉬</p>
+            <p>2005 04 11</p>
+            <p>호주, 대한민국</p>
+            <p>ENFP</p>
+          </div>
+        </div>
+      </div>
+      <div class="profile-card">
+        <div class="profile-img haerin">
+          <div class="info">HAERIN</div>
+          <div class="text">
+            <p>강해린</p>
+            <p>2006 05 15</p>
+            <p>대한민국</p>
+            <p>ISTP</p>
+          </div>
+        </div>
+      </div>
+      <div class="profile-card">
+        <div class="profile-img hyein">
+          <div class="info">HYEIN</div>
+          <div class="text">
+            <p>이혜인</p>
+            <p>2008 04 21</p>
+            <p>대한민국</p>
+            <p>INFP</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="sns">
+        <a
+          href="https://www.instagram.com/newjeans_official/"
+          title="Instargram"
+          target="_blank"
+        >
+          <i class="fa-brands fa-instagram fa-xl"></i>
+        </a>
+        <a
+          href="https://twitter.com/NewJeans_ADOR"
+          title="Twitter"
+          target="_blank"
+        >
+          <i class="fa-brands fa-twitter fa-xl"></i>
+        </a>
+        <a
+          href="https://www.youtube.com/channel/UCMki_UkHb4qSc0qyEcOHHJw"
+          title="YouTube"
+          target="_blank"
+        >
+          <i class="fa-brands fa-youtube fa-xl"></i>
+        </a>
+        <a
+          href="https://www.tiktok.com/@newjeans_official"
+          title="TikTok"
+          target="_blank"
+        >
+          <i class="fa-brands fa-tiktok fa-xl"></i>
+        </a>
+      </div>
+      <div class="copyright">Copyright © Song. All Rights Reserved.</div>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function makeSnow() {
+        w = Math.random() * window.screen.width;
+        t = Math.random() * 10;
+        const snowBox = `<div class="snow" style="left:${w}px; animation-delay:${t}s"></div>`;
+        $(".snow-container").append(snowBox);
+      }
+
+      for (let i = 0; i < 50; i++) {
+        makeSnow();
+      }
+
+      let cnt = 0;
+      $(".navbar-btn").click(function () {
+        cnt++;
+        if (cnt % 2 != 0) {
+          $(".navbar").addClass("open");
+          $(".navbar").removeClass("close");
+        } else {
+          $(".navbar").addClass("close");
+          $(".navbar").removeClass("open");
+        }
+      });
+
+      $(".info").click(function (e) {
+        console.log(e.target.nextElementSibling);
+        $(e.target.nextElementSibling).toggleClass("text-opacity");
+      });
+
+      let cnt2 = 0;
+      $(".btn").click(function () {
+        if (cnt2 % 2 == 0) {
+          $(".on").css("display", "block");
+          $(".off").css("display", "none");
+          $(".minji").css(
+            "background-image",
+            "url(https://song0331.github.io/newjeans/profile/after/0.jpg)"
+          );
+          $(".hanni").css(
+            "background-image",
+            "url(https://song0331.github.io/newjeans/profile/after/1.jpg)"
+          );
+          $(".danielle").css(
+            "background-image",
+            "url(https://song0331.github.io/newjeans/profile/after/2.jpg)"
+          );
+          $(".haerin").css(
+            "background-image",
+            "url(https://song0331.github.io/newjeans/profile/after/3.jpg)"
+          );
+          $(".hyein").css(
+            "background-image",
+            "url(https://song0331.github.io/newjeans/profile/after/4.jpg)"
+          );
+        } else {
+          $(".on").css("display", "none");
+          $(".off").css("display", "block");
+          $(".minji").css(
+            "background-image",
+            "url(https://song0331.github.io/newjeans/profile/before/0.jpg)"
+          );
+          $(".hanni").css(
+            "background-image",
+            "url(https://song0331.github.io/newjeans/profile/before/1.jpg)"
+          );
+          $(".danielle").css(
+            "background-image",
+            "url(https://song0331.github.io/newjeans/profile/before/2.jpg)"
+          );
+          $(".haerin").css(
+            "background-image",
+            "url(https://song0331.github.io/newjeans/profile/before/3.jpg)"
+          );
+          $(".hyein").css(
+            "background-image",
+            "url(https://song0331.github.io/newjeans/profile/before/4.jpg)"
+          );
+        }
+        cnt2++;
+      });
+    </script>
+  </body>
+</html>
