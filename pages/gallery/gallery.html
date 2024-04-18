@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/home.css" />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/gallery.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="/src/favicon/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Noto+Sans+KR:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>NewJeans</title>
+  </head>
+
+  <body>
+    <header>
+      <a href="/" class="logo" title="홈">NewJeans</a>
+      <button class="fa-solid fa-bars navbar-btn" type="button"></button>
+    </header>
+
+    <nav>
+      <ul class="navbar close">
+        <li><a title="홈" href="/">HOME</a></li>
+        <li>
+          <a title="프로필" href="/pages/profile/profile.html">PROFILE</a>
+        </li>
+        <li>
+          <a title="프로필" href="/pages/discography/discography.html"
+            >DISCOGRAPHY</a
+          >
+        </li>
+        <li>
+          <a title="프로필" href="/pages/gallery/gallery.html">GALLERY</a>
+        </li>
+        <li>
+          <a title="프로필" href="/pages/video/video.html">VIDEO</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="gallery-container">
+      <div class="title-container">
+        <div class="title">GALLERY</div>
+        <div style="text-align: center" class="mobile">
+          <div class="more-btn">
+            <button class="Ditto-m">Ditto</button>
+            <button class="OMG-m">OMG</button>
+            <button class="Etc-m">Etc</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="img-container-mobile"></div>
+      <div class="img-container-pc"></div>
+
+      <div style="text-align: center" class="pc">
+        <div class="more-btn">
+          <button class="Ditto">Ditto</button>
+          <button class="OMG">OMG</button>
+          <button class="Etc">Etc</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <ul class="sns">
+        <li>
+          <a
+            href="https://www.youtube.com/channel/UCMki_UkHb4qSc0qyEcOHHJw"
+            title="YouTube"
+            target="_blank"
+            class="fa-brands fa-youtube fa-xl"
+          >
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/newjeans_official/"
+            title="Instargram"
+            target="_blank"
+            class="fa-brands fa-instagram fa-xl"
+          >
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/NewJeans_ADOR"
+            title="Twitter"
+            target="_blank"
+            class="fa-brands fa-x-twitter fa-xl"
+          >
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.tiktok.com/@newjeans_official"
+            title="TikTok"
+            target="_blank"
+            class="fa-brands fa-tiktok fa-xl"
+          >
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.facebook.com/official.newjeans"
+            title="facebook"
+            target="_blank"
+            class="fa-brands fa-facebook fa-xl"
+          >
+          </a>
+        </li>
+      </ul>
+      <div class="copyright">Copyright © Song. All Rights Reserved.</div>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/main.js"></script>
+    <script type="module" src="/pages/gallery/gallery.js"></script>
+    <!-- <script>
+      let cnt = 0;
+      $(".navbar-btn").click(function () {
+        cnt++;
+        if (cnt % 2 != 0) {
+          $(".navbar").addClass("open");
+          $(".navbar").removeClass("close");
+        } else {
+          $(".navbar").addClass("close");
+          $(".navbar").removeClass("open");
+        }
+      });
+
+      let zIdx = 0;
+      $(document).on("click", ".img", function (e) {
+        $(e.target).toggleClass("full");
+        if (e.target.dataset.onoff == 1) {
+          e.target.dataset.onoff = "0";
+        } else {
+          zIdx++;
+          e.target.dataset.onoff = "1";
+          $(e.target).css("z-index", `${zIdx}`);
+        }
+      });
+
+      function imgData(title) {
+        $.get(`./${title}.json`)
+          .done(function (data) {
+            for (let i = 0; i < data.length; i++) {
+              let img = `
+                  <div class="img-box ${title}">
+                     <img class="img full" src="${data[i].name}" data-onoff="1" alt="">
+                  </div>
+                  `;
+              $(".img-container-pc").append(img);
+            }
+          })
+          .fail(function () {
+            console.log("ajax 실패!");
+          });
+      }
+
+      function imgDataMoblie(title) {
+        $.get(`./${title}.json`)
+          .done(function (data) {
+            for (let i = 0; i < data.length; i++) {
+              let img = `
+                  <div class="img-box ${title}">
+                     <img class="img" src="${data[i].name}" data-onoff="1" alt="">
+                  </div>
+                  `;
+              $(".img-container-mobile").append(img);
+            }
+          })
+          .fail(function () {
+            console.log("ajax 실패!");
+          });
+      }
+
+      function removeImg() {
+        $(".ditto").remove();
+        $(".omg").remove();
+        $(".etc").remove();
+      }
+
+      //imgData('ditto');
+
+      $(".Ditto").click(function () {
+        removeImg();
+        imgData("ditto");
+      });
+      $(".OMG").click(function () {
+        removeImg();
+        imgData("omg");
+      });
+      $(".Etc").click(function () {
+        removeImg();
+        imgData("etc");
+      });
+
+      $(".Ditto-m").click(function () {
+        removeImg();
+        imgDataMoblie("ditto");
+      });
+      $(".OMG-m").click(function () {
+        removeImg();
+        imgDataMoblie("omg");
+      });
+      $(".Etc-m").click(function () {
+        removeImg();
+        imgDataMoblie("etc");
+      });
+
+      $.get(`./ditto.json`) // pc버젼
+        .done(function (data) {
+          for (let i = 0; i < data.length; i++) {
+            let img = `
+               <div class="img-box ditto">
+                  <img class="img full" src="${data[i].name}" data-onoff="1" alt="">
+               </div>
+               `;
+            $(".img-container-pc").append(img);
+          }
+        })
+        .fail(function () {
+          console.log("ajax 실패!");
+        });
+
+      $.get(`./ditto.json`) // mobile버젼
+        .done(function (data) {
+          for (let i = 0; i < data.length; i++) {
+            let img = `
+               <div class="img-box ditto">
+                  <img class="img" src="${data[i].name}" data-onoff="1" alt="">
+               </div>
+               `;
+            $(".img-container-mobile").append(img);
+          }
+        })
+        .fail(function () {
+          console.log("ajax 실패!");
+        });
+    </script> -->
+  </body>
+</html>

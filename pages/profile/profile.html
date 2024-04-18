@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko-KR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/home.css" />
-    <link rel="stylesheet" href="./css/profile.css" />
+    <link rel="stylesheet" href="/styles/home.css" />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/profile.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="/src/favicon/favicon.ico" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Noto+Sans+KR:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
@@ -24,33 +26,27 @@
 
   <body>
     <header>
-      <a href="./index.html">
-        <h2 class="logo">NewJeans</h2>
-      </a>
-      <i class="fa-solid fa-bars navbar-btn"></i>
+      <a href="/" class="logo" title="홈">NewJeans</a>
+      <button class="fa-solid fa-bars navbar-btn" type="button"></button>
     </header>
 
     <nav>
       <ul class="navbar close">
-        <a href="./index.html">
-          <li>HOME</li>
-        </a>
-        <a href="./profile.html">
-          <li>PROFILE</li>
-        </a>
-        <a href="./discography.html">
-          <li>DISCOGRAPHY</li>
-        </a>
-        <a href="./gallery.html">
-          <li>GALLERY</li>
-        </a>
-        <a href="./video.html">
-          <li>VIDEO</li>
-        </a>
-        <!-- <li>PROFILE</li>
-         <li>DISCOGRAPHY</li>
-         <li>GALLERY</li>
-         <li>VIDEO</li> -->
+        <li><a title="홈" href="/">HOME</a></li>
+        <li>
+          <a title="프로필" href="/pages/profile/profile.html">PROFILE</a>
+        </li>
+        <li>
+          <a title="프로필" href="/pages/discography/discography.html"
+            >DISCOGRAPHY</a
+          >
+        </li>
+        <li>
+          <a title="프로필" href="/pages/gallery/gallery.html">GALLERY</a>
+        </li>
+        <li>
+          <a title="프로필" href="/pages/video/video.html">VIDEO</a>
+        </li>
       </ul>
     </nav>
 
@@ -58,8 +54,6 @@
       <i class="btn off fa-solid fa-toggle-off fa-2x"></i>
       <i class="btn on fa-solid fa-toggle-on fa-2x" style="display: none"></i>
     </div>
-
-    <!-- <div class="snow-container"></div> -->
 
     <main class="profile-container">
       <div class="pageName-container">
@@ -124,36 +118,53 @@
     </main>
 
     <footer>
-      <div class="sns">
-        <a
-          href="https://www.instagram.com/newjeans_official/"
-          title="Instargram"
-          target="_blank"
-        >
-          <i class="fa-brands fa-instagram fa-xl"></i>
-        </a>
-        <a
-          href="https://twitter.com/NewJeans_ADOR"
-          title="Twitter"
-          target="_blank"
-        >
-          <i class="fa-brands fa-twitter fa-xl"></i>
-        </a>
-        <a
-          href="https://www.youtube.com/channel/UCMki_UkHb4qSc0qyEcOHHJw"
-          title="YouTube"
-          target="_blank"
-        >
-          <i class="fa-brands fa-youtube fa-xl"></i>
-        </a>
-        <a
-          href="https://www.tiktok.com/@newjeans_official"
-          title="TikTok"
-          target="_blank"
-        >
-          <i class="fa-brands fa-tiktok fa-xl"></i>
-        </a>
-      </div>
+      <ul class="sns">
+        <li>
+          <a
+            href="https://www.youtube.com/channel/UCMki_UkHb4qSc0qyEcOHHJw"
+            title="YouTube"
+            target="_blank"
+            class="fa-brands fa-youtube fa-xl"
+          >
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/newjeans_official/"
+            title="Instargram"
+            target="_blank"
+            class="fa-brands fa-instagram fa-xl"
+          >
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/NewJeans_ADOR"
+            title="Twitter"
+            target="_blank"
+            class="fa-brands fa-x-twitter fa-xl"
+          >
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.tiktok.com/@newjeans_official"
+            title="TikTok"
+            target="_blank"
+            class="fa-brands fa-tiktok fa-xl"
+          >
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.facebook.com/official.newjeans"
+            title="facebook"
+            target="_blank"
+            class="fa-brands fa-facebook fa-xl"
+          >
+          </a>
+        </li>
+      </ul>
       <div class="copyright">Copyright © Song. All Rights Reserved.</div>
     </footer>
 
@@ -162,7 +173,9 @@
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
       crossorigin="anonymous"
     ></script>
-    <script>
+    <script src="/main.js"></script>
+    <script type="module" src="./profile.js"></script>
+    <!-- <script>
       function makeSnow() {
         w = Math.random() * window.screen.width;
         t = Math.random() * 10;
@@ -242,6 +255,6 @@
         }
         cnt2++;
       });
-    </script>
+    </script> -->
   </body>
 </html>
