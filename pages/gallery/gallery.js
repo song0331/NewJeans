@@ -27,7 +27,7 @@ $(document).on("click", ".img", function (e) {
 });
 
 function imgData(title) {
-  $.get(`./${title}.json`)
+  $.get(`/src/data/${title}.json`)
     .done(function (data) {
       for (let i = 0; i < data.length; i++) {
         let img = `
@@ -44,7 +44,7 @@ function imgData(title) {
 }
 
 function imgDataMoblie(title) {
-  $.get(`./${title}.json`)
+  $.get(`/src/data/${title}.json`)
     .done(function (data) {
       for (let i = 0; i < data.length; i++) {
         let img = `

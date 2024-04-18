@@ -32,7 +32,7 @@ https://youtu.be/P6AcuS7lQ5U
 
 ### 폴더 구조
 
-![](https://velog.velcdn.com/images/thdgusrbek/post/9bb80ce6-04a6-4672-affb-aaebfb569e6d/image.png)
+![](https://velog.velcdn.com/images/thdgusrbek/post/4949aa34-6cd8-4ec5-9699-d58182541eb0/image.png)
 
 ---
 
