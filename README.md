@@ -1,11 +1,7 @@
 # NewJeans
 
 아이돌 그룹 뉴진스를 소개하는 반응형 웹사이트<br><br>
-![](https://velog.velcdn.com/images/thdgusrbek/post/6a8d2fb8-aa3f-4cad-a5b4-76a6ef0d6e48/image.png)<br><br>
-
-### 시연 영상 (1분 30초)
-
-https://youtu.be/P6AcuS7lQ5U
+![](https://velog.velcdn.com/images/thdgusrbek/post/24610de8-9657-4438-a629-4111886c63a1/image.png)
 
 ---
 
@@ -32,7 +28,7 @@ https://youtu.be/P6AcuS7lQ5U
 
 ### 폴더 구조
 
-![](https://velog.velcdn.com/images/thdgusrbek/post/4949aa34-6cd8-4ec5-9699-d58182541eb0/image.png)
+![](https://velog.velcdn.com/images/thdgusrbek/post/334b8820-1d47-4735-929e-18442e217873/image.png)
 
 ---
 
@@ -60,10 +56,53 @@ https://youtu.be/P6AcuS7lQ5U
 
 <br>
 
-### 후기
+### 트러블 슈팅 (Trouble shooting)
 
-프로젝트 구상, 기획 단계에서 간단한 틀만 짜고 시작했던 나를 원망하게 되었다.
-자세한 구상, 기획이 귀찮아서 '대충 이런 식으로 하면 되겠지 뭐' 이런 생각이 나중에 ⛄스노우볼이 되어 돌아왔다.<br><br>
+기존 파일구조는 단순하게 `index.html`, `profile.html`, `video.html`, ... 이런식으로 폴더를 구분하지 않고 사용했다.
+
+그러다, 용도에 맞게 파일을 구분하기 위해 고민하던 중 `Vite`를 사용하게 되었다.
+
+하지만, `Vite`를 사용해서 배포했지만 문제가 생겼다.
+Github는 레포지토리 이름이 기본적으로 url에 추가되기 때문에 개발단계에서는 경로에 문제가 없었지만 배포 후 경로에 레포지토리 이름이 추가되어 문제가 발생했다.
+
+이를 해결하기 위해 [Vite 공식문서](https://ko.vitejs.dev/guide/env-and-mode.html#env-variables)를 찾아보았다.
+
+vite설정에 base값을 변경하게되면 빌드시 정적 자산의 위치를 정확하게 찾지 못하는 문제가 발생할 수 있다.
+이를 해결하기 위해 base값을 dev모드에선 활성화 하지 않고 배포 모드(production)에서만 경로를 심어주어 해당 문제를 해결할 수 있다.
+
+```jsx
+// 배포 모드(production)라면 '/NewJeans/'를 넣고 그렇지 않으면 '/'을 기본 url로 설정
+base: process.env.NODE_ENV === 'production' ? '/NewJeans/' : '/',
+
+// 이렇게 환경변수를 사용해  base의 주소를 조건처리하면 된다.
+```
+
+<br>
+
+이후 `a태그` 경로도 수정이 필요하다.
+절대경로가 아닌 상대경로를 심어주어 빌드시 제대로된 경로를 찾을 수 있도록 만들었다.
+
+```jsx
+// %BASE_URL% 자리에 '/NewJeans/' 또는 '/' 값이 심어진다.
+<a title="프로필" href="%BASE_URL%src/pages/profile/">
+  PROFILE
+</a>
+```
+
+<br>
+
+#### 이렇게 Github에 경로 문제를 해결할 수 있었다.
+
+- 메인 페이지
+  ![](https://velog.velcdn.com/images/thdgusrbek/post/f7d9b1fd-d83d-4a5c-a635-678363f9f481/image.png)<br><br>
+- 프로필 페이지
+  ![](https://velog.velcdn.com/images/thdgusrbek/post/0abe3a12-3161-4e2d-8caa-6e6f6a1e0982/image.png)
+
+---
+
+<br>
+
+### 후기
 
 #### 기획, 설계단계를 확실히 하자
 
@@ -95,4 +134,4 @@ https://youtu.be/P6AcuS7lQ5U
 
 <br>
 
-### [💻Demo](https://song0331.github.io/newjeansImg-/)
+### [💻Demo](https://song0331.github.io/NewJeans/)
