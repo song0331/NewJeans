@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/styles/home.css" />
-    <link rel="stylesheet" href="./src/styles/index.css" />
+    <link rel="stylesheet" href="../../styles/home.css" />
+    <link rel="stylesheet" href="../../styles/index.css" />
+    <link rel="stylesheet" href="../../styles/gallery.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" href="/favicon.ico" />
@@ -49,10 +50,26 @@
       </ul>
     </nav>
 
-    <main class="main-container">
-      <div class="main-bg">
-        <div class="title">
-          <div class="main-text">NewJeans</div>
+    <main class="gallery-container">
+      <div class="title-container">
+        <div class="title">GALLERY</div>
+        <div style="text-align: center" class="mobile">
+          <div class="more-btn">
+            <button class="Ditto-m">Ditto</button>
+            <button class="OMG-m">OMG</button>
+            <button class="Etc-m">Etc</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="img-container-mobile"></div>
+      <div class="img-container-pc"></div>
+
+      <div style="text-align: center" class="pc">
+        <div class="more-btn">
+          <button class="Ditto">Ditto</button>
+          <button class="OMG">OMG</button>
+          <button class="Etc">Etc</button>
         </div>
       </div>
     </main>
@@ -113,6 +130,7 @@
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="../../../main.js"></script>
+    <script type="module" src="./gallery.js"></script>
   </body>
 </html>

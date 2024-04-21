@@ -1,0 +1,160 @@
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+.video-container {
+  background-color: #3a3a3a;
+  background-image: url("/images/토끼.jpg");
+  background-size: contain;
+  background-position: center;
+  height: auto;
+}
+
+.pageName {
+  background-image: linear-gradient(180deg, rgb(255, 255, 255), rgb(0, 0, 0));
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  width: 100%;
+  font-size: 5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  padding: 50px 0;
+}
+
+.mv-show {
+  width: 760px;
+  height: 415px;
+  /* text-align: center; */
+  margin: auto;
+  padding: 50px;
+}
+
+.mv-show iframe {
+  /* border-radius: 10px; */
+  box-shadow: 0px 0px 5px 1px whitesmoke;
+}
+
+.now {
+  width: 100%;
+  height: 100%;
+}
+
+.mv-list {
+  width: 80%;
+  padding: 50px;
+  display: flex;
+  margin: auto;
+  border-radius: 15px;
+  list-style: none;
+  overflow: hidden;
+
+  button {
+    background-color: inherit;
+    border: none;
+    width: 560px;
+    height: 315px;
+    margin: 0 20px;
+  }
+}
+
+.mv-list:hover {
+  overflow-x: scroll;
+  padding-bottom: 30px;
+}
+
+/* 스크롤바의 너비 */
+/* 스크롤바의 색상 */
+/*스크롤바 뒷 배경 색상*/
+.mv-list:hover::-webkit-scrollbar {
+  height: 20px;
+}
+.mv-list:hover::-webkit-scrollbar-thumb {
+  background: whitesmoke;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.mv-list:hover::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+}
+
+.mv-list img {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  box-shadow: 5px 5px 5px 5px black;
+  border-radius: 20px;
+}
+
+.mv-list-item:hover {
+  transform: scale(1.03);
+  transition: all 0.5s;
+}
+
+.title {
+  color: black;
+  /* text-align: center; */
+  margin: auto;
+  padding-bottom: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* https://img.youtube.com/vi/eKZzOcgN4AI/0.jpg //상하여백 있음
+https://img.youtube.com/vi/eKZzOcgN4AI/mqdefault.jpg  //상하여백 없음
+https://img.youtube.com/vi/eKZzOcgN4AI/maxresdefault.jpg //최대 크기, 퀄리티 */
+
+@media screen and (max-width: 767px) {
+  .video-container {
+    background-size: cover;
+    background-position: top;
+  }
+  .pageName {
+    font-size: 2.5rem;
+  }
+  .mv-show {
+    position: relative;
+    overflow: hidden;
+    max-width: 65%;
+    height: 0 !important;
+    padding-top: calc(9 / 16 * 65%);
+  }
+
+  .now {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* 상황에 맞게 조절 */
+    height: 100%;
+  }
+
+  .mv-list {
+    margin-top: 20px;
+    padding: 20px;
+    padding-top: 70px;
+
+    button {
+      background-color: inherit;
+      border: none;
+      width: 280px;
+      height: 170px;
+      margin: 0 10px;
+    }
+  }
+
+  .title {
+    width: 210px;
+    font-size: 1rem;
+  }
+
+  .mv-list:hover {
+    padding-bottom: 0px;
+  }
+}
