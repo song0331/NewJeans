@@ -2,18 +2,12 @@ import setTitle from "../../lib/setTitle.js";
 
 setTitle("Video");
 
-let cnt = 0;
+let showNav = false;
 $(".navbar-btn").click(function () {
-  cnt++;
-  if (cnt % 2 != 0) {
-    $(".navbar").addClass("open");
-    $(".navbar").removeClass("close");
-  } else {
-    $(".navbar").addClass("close");
-    $(".navbar").removeClass("open");
-  }
+  $(".navbar").toggleClass("open", !showNav);
+  $(".navbar").toggleClass("close", showNav);
+  showNav = !showNav;
 });
-
 $("button").click(function (e) {
   let address = "";
   let arr = [];
