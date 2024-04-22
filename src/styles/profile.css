@@ -10,7 +10,6 @@ li {
   justify-content: space-evenly;
   flex-wrap: wrap;
   background: linear-gradient(126deg, #9ea0f1 0%, #cfdfee 50%, #548265 100%);
-  /* background: linear-gradient(126deg, rgba(241, 31, 170, 1) 0%, rgba(240, 159, 238, 1) 50%, rgba(164, 193, 227, 1) 100%); */
 }
 
 .pageName-container {
@@ -52,7 +51,6 @@ li {
 .profile-img {
   height: 100%;
   background-size: cover;
-  /* background-position: bottom; */
   border-radius: 15px;
 }
 
@@ -61,7 +59,7 @@ li {
   width: 100%;
   height: 100%;
   opacity: 0;
-  color: #ffb907bb;
+  color: #ffffffde;
   background-color: black;
   font-size: 7rem;
   font-weight: 700;
@@ -73,7 +71,7 @@ li {
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  color: rgb(0, 0, 0);
+  color: #fff;
   font-family: "Noto Sans KR", sans-serif;
   font-size: 2rem;
   font-weight: 700;
@@ -89,16 +87,26 @@ li {
   font-size: 25px;
 }
 
-.info:hover,
-.info:focus {
+.info:hover {
   opacity: 0.7;
   cursor: pointer;
   transition: all 0.8s;
 }
 
+.info:focus {
+  animation-name: focusIn-out;
+  animation-duration: 0.8s;
+}
+
+@keyframes focusIn-out {
+  100% {
+    opacity: 0.7;
+  }
+}
+
 .text-opacity {
   visibility: visible;
-  opacity: 0.7;
+  opacity: 0.95;
   transition: all 0.8s;
 }
 
@@ -142,7 +150,7 @@ li {
     text-align: center;
   }
   .info {
-    font-size: 4rem;
+    font-size: 3rem;
   }
   .text {
     font-size: 1.5rem;

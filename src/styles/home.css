@@ -48,6 +48,10 @@ a {
   cursor: pointer;
 }
 
+.navbar-btn:hover {
+  color: #816622;
+}
+
 .navbar li {
   font-weight: 700;
   font-size: 5rem;
