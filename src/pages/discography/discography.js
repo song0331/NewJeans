@@ -1,4 +1,5 @@
 import setTitle from "../../lib/setTitle.js";
+import pb from "../../api/pocketbase.js";
 
 setTitle("Discography");
 
@@ -8,90 +9,52 @@ $(".navbar-btn").click(function () {
   $(".navbar").toggleClass("close", showNav);
   showNav = !showNav;
 });
-$(".on").click(function () {
-  $(".off").css("display", "block");
-  $(".on").css("display", "none");
-  $(".text").css("display", "none");
-  console.log("on");
-});
-$(".off").click(function () {
-  $(".on").css("display", "block");
-  $(".off").css("display", "none");
-  $(".text").css("display", "block");
-  console.log("off");
+
+const albumData = await pb.collection("discography").getFullList({
+  sort: "release",
 });
 
-$(".album img").click(function (e) {
-  console.log(11);
-  $(".x").css("display", "block");
-  $(".text").css("display", "block");
+albumData.forEach((item) => {
+  console.log(item.albumTrack);
+  let list_item = `
+    <li class="album-list-item" tabindex="0">
+      <img src="${import.meta.env.VITE_PB_API}/api/files/discography/${
+    item.id
+  }/${item.albumCover}" alt="${item.albumName} 앨범 커버 사진" title="${
+    item.albumName
+  }" />
+    </li>
+  `;
+
+  $(".album-list").append(list_item);
 });
 
-$(".x").click(function () {
-  console.log("click x");
-  $(".x").css("display", "none");
-  $(".text").css("display", "none");
+$(".album-list").click((e) => {
+  if (e.target.tagName !== "IMG") return;
+  console.log(e.target.title);
+
+  $(".modal")[0].showModal();
+  // $(".modal img").attr("src", e.target.src);
+  $(".modal").css("background-image", `url(${e.target.src})`);
+  $(".album-title").text(e.target.title);
+  $(".album-title").attr("title", e.target.title);
 });
 
-function bg() {
-  if (pageCnt == 0) {
-    $(".discography-bg").css(
-      "background-image",
-      "url(https://song0331.github.io/newjeansImg/discography/0.jpg)"
-    );
-    $(".left").css("color", "cornflowerblue");
-    $(".right").css("color", "cornflowerblue");
-    $(".album1").css("transform", "translateX(0px)");
-    $(".album2").css("transform", "translateX(3000px)");
-    $(".album3").css("transform", "translateX(3000px)");
-    $(".album4").css("transform", "translateX(3000px)");
-  } else if (pageCnt == 1) {
-    $(".discography-bg").css(
-      "background-image",
-      "url(https://song0331.github.io/newjeansImg/discography/1.jpg)"
-    );
-    $(".left").css("color", "#cd4d62");
-    $(".right").css("color", "#cd4d62");
-    $(".album1").css("transform", "translateX(3000px)");
-    $(".album2").css("transform", "translateX(0px)");
-    $(".album3").css("transform", "translateX(3000px)");
-    $(".album4").css("transform", "translateX(3000px)");
-  } else if (pageCnt == 2) {
-    $(".discography-bg").css(
-      "background-image",
-      "url(https://song0331.github.io/newjeansImg/discography/2.jpg)"
-    );
-    $(".left").css("color", "#505050");
-    $(".right").css("color", "#505050");
-    $(".album1").css("transform", "translateX(3000px)");
-    $(".album2").css("transform", "translateX(3000px)");
-    $(".album3").css("transform", "translateX(0px)");
-    $(".album4").css("transform", "translateX(3000px)");
-  } else if (pageCnt == 3) {
-    $(".discography-bg").css(
-      "background-image",
-      "url(https://song0331.github.io/newjeansImg/discography/3.jpg)"
-    );
-    $(".left").css("color", "#c6596b");
-    $(".right").css("color", "#c6596b");
-    $(".album1").css("transform", "translateX(3000px)");
-    $(".album2").css("transform", "translateX(3000px)");
-    $(".album3").css("transform", "translateX(3000px)");
-    $(".album4").css("transform", "translateX(0px)");
-  }
-}
+$(".album-list").keydown((e) => {
+  if (e.key === "Tab") return;
 
-let pageCnt = 0;
-$(".right").click(function () {
-  if (pageCnt < 3) {
-    pageCnt++;
-    bg();
+  console.log(e.key === "Enter");
+  console.log(e.target);
+
+  if (e.target.tagName === "LI") {
+    // $(".modal")[0].showModal();
+    document.querySelector(".modal").showModal();
+    // $(".modal").attr("src", e.target.children[0].src);
+    $(".modal").css("background-image", `url(${e.target.children[1].src})`);
+    // console.log("!!!!!!");
   }
 });
 
-$(".left").click(function () {
-  if (pageCnt > 0) {
-    pageCnt--;
-    bg();
-  }
+$(".close_btn").click((e) => {
+  $(".modal")[0].close();
 });
