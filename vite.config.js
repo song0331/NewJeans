@@ -2,6 +2,9 @@ import { resolve } from "node:path";
 import { defineConfig } from "vite";
 
 export default defineConfig({
+  esbuild: {
+    target: "esnext",
+  },
   build: {
     outDir: "docs",
     rollupOptions: {
