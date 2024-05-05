@@ -14,15 +14,17 @@ const albumData = await pb.collection("discography").getFullList({
   sort: "release",
 });
 
-albumData.forEach((item) => {
-  console.log(item.albumTrack);
+let albumTrack = [];
+
+albumData.forEach((item, idx) => {
+  albumTrack.push(item.albumTrack);
   let list_item = `
     <li class="album-list-item" tabindex="0">
-      <img src="${import.meta.env.VITE_PB_API}/api/files/discography/${
-    item.id
-  }/${item.albumCover}" alt="${item.albumName} 앨범 커버 사진" title="${
+      <img data-index=${idx} src="${
+    import.meta.env.VITE_PB_API
+  }/api/files/discography/${item.id}/${item.albumCover}" alt="${
     item.albumName
-  }" />
+  } 앨범 커버 사진" title="${item.albumName}" />
     </li>
   `;
 
@@ -31,27 +33,39 @@ albumData.forEach((item) => {
 
 $(".album-list").click((e) => {
   if (e.target.tagName !== "IMG") return;
-  console.log(e.target.title);
 
+  $(".album-trackList").empty();
   $(".modal")[0].showModal();
-  // $(".modal img").attr("src", e.target.src);
   $(".modal").css("background-image", `url(${e.target.src})`);
   $(".album-title").text(e.target.title);
   $(".album-title").attr("title", e.target.title);
+
+  albumTrack[e.target.dataset.index].forEach((item) => {
+    let trackList_item = item.title
+      ? `<li>${item.song} <span>TITLE</span></li>`
+      : `<li>${item.song}</li>`;
+
+    $(".album-trackList").append(trackList_item);
+  });
 });
 
 $(".album-list").keydown((e) => {
-  if (e.key === "Tab") return;
+  if (e.key === " ") {
+    if (e.target.tagName === "LI") {
+      $(".album-trackList").empty();
+      $(".modal")[0].showModal();
+      $(".modal").css("background-image", `url(${e.target.children[0].src})`);
+      $(".album-title").text(e.target.title);
+      $(".album-title").attr("title", e.target.children[0].title);
 
-  console.log(e.key === "Enter");
-  console.log(e.target);
+      albumTrack[e.target.children[0].dataset.index].forEach((item) => {
+        let trackList_item = item.title
+          ? `<li>${item.song} <span>TITLE</span></li>`
+          : `<li>${item.song}</li>`;
 
-  if (e.target.tagName === "LI") {
-    // $(".modal")[0].showModal();
-    document.querySelector(".modal").showModal();
-    // $(".modal").attr("src", e.target.children[0].src);
-    $(".modal").css("background-image", `url(${e.target.children[1].src})`);
-    // console.log("!!!!!!");
+        $(".album-trackList").append(trackList_item);
+      });
+    }
   }
 });
 

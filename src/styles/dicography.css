@@ -8,32 +8,6 @@ li {
   background-color: rgba(228, 228, 228, 0.795);
 }
 
-.sort-btn-wrapper {
-  display: flex;
-  justify-content: end;
-  gap: 1.2rem;
-  margin-right: 2rem;
-}
-
-.sort-btn {
-  cursor: pointer;
-  width: 100px;
-  border-radius: 20px;
-  border: solid 1px rgb(77, 77, 77);
-  color: rgb(77, 77, 77);
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 5px 10px;
-  margin: 10px 0;
-  background-color: transparent;
-}
-
-.sort-btn:hover {
-  color: black;
-  border: 1px solid black;
-  transform: translateY(-1px);
-}
-
 .album-list {
   display: grid;
   grid-template-columns: repeat(3, 25%);
@@ -77,11 +51,12 @@ li {
   border: none;
   padding: 0;
   border-radius: 10px;
+  overflow: auto;
 
   .modal-wrapper {
     background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
-    height: 100%;
+    height: 850px;
   }
 
   .album-title {
@@ -97,18 +72,33 @@ li {
   }
 
   ol {
-    width: 150px;
+    padding: 0;
+  }
+
+  li {
     text-align: start;
     padding-top: 2rem;
     margin: auto;
+    margin-left: 200px;
     font-size: 1.4rem;
+
+    span {
+      font-size: 0.6rem;
+      color: #00cd3c;
+      border: 1px solid #00cd3c;
+      border-radius: 20px;
+      padding: 1px 8px;
+    }
   }
+}
+
+.modal::-webkit-scrollbar {
+  display: none; /* 스크롤바 숨기기 */
 }
 
 .close_btn {
   cursor: pointer;
   color: rgb(255, 53, 53);
-  /* background-color: rgba(0, 0, 0, 0.719); */
   background: none;
   width: 40px;
   height: 40px;
@@ -130,5 +120,30 @@ li {
 @media screen and (max-width: 768px) {
   .album-list {
     grid-template-columns: 1fr;
+  }
+
+  .modal {
+    width: 300px;
+    height: 300px;
+
+    .modal-wrapper {
+      background-color: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      height: 600px;
+    }
+
+    .album-title {
+      font-size: 1rem;
+    }
+
+    li {
+      padding-top: 1rem;
+      margin-left: 50px;
+      font-size: 0.9rem;
+
+      span {
+        padding: 1px 6px;
+      }
+    }
   }
 }
