@@ -10,26 +10,30 @@ $(".navbar-btn").click(function () {
   showNav = !showNav;
 });
 
-const albumData = await pb.collection("discography").getFullList({
+const albumData = pb.collection("discography").getFullList({
   sort: "release",
 });
 
 let albumTrack = [];
 
-albumData.forEach((item, idx) => {
-  albumTrack.push(item.albumTrack);
-  let list_item = `
+albumData
+  .then((data) => {
+    data.forEach((item, idx) => {
+      albumTrack.push(item.albumTrack);
+      let list_item = `
     <li class="album-list-item" tabindex="0">
       <img data-index=${idx} src="${
-    import.meta.env.VITE_PB_API
-  }/api/files/discography/${item.id}/${item.albumCover}" alt="${
-    item.albumName
-  } 앨범 커버 사진" title="${item.albumName}" />
+        import.meta.env.VITE_PB_API
+      }/api/files/discography/${item.id}/${item.albumCover}" alt="${
+        item.albumName
+      } 앨범 커버 사진" title="${item.albumName}" />
     </li>
   `;
 
-  $(".album-list").append(list_item);
-});
+      $(".album-list").append(list_item);
+    });
+  })
+  .catch((error) => console.log(error));
 
 $(".album-list").click((e) => {
   if (e.target.tagName !== "IMG") return;
