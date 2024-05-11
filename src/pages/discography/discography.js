@@ -13,7 +13,6 @@ $(".navbar-btn").click(function () {
 const albumData = pb.collection("discography").getFullList({
   sort: "release",
 });
-
 let albumTrack = [];
 
 albumData
@@ -26,7 +25,7 @@ albumData
         import.meta.env.VITE_PB_API
       }/api/files/discography/${item.id}/${item.albumCover}" alt="${
         item.albumName
-      } 앨범 커버 사진" title="${item.albumName}" />
+      } 앨범 커버" title="${item.albumName}" />
     </li>
   `;
 
@@ -76,3 +75,29 @@ $(".album-list").keydown((e) => {
 $(".close_btn").click((e) => {
   $(".modal")[0].close();
 });
+
+// // 스켈레톤 요소
+// const skeletonItem = document.querySelectorAll(".skeleton_loading");
+// // 스켈레톤 요소 전체 삭제
+// const hideskeleton = () => {
+//   skeletonItem.forEach((element) => {
+//     $(element).fadeOut();
+//   });
+// };
+// // 테스트 코드 (페이지 로딩을 위해 2초간 스켈레톤 애니메이션이 보여짐)
+// window.onload = setTimeout(hideskeleton, 2000);
+// // 실제 코드 (실제로 사용될 코드)
+// // window.onload = hideskeleton;
+
+// let img = `
+//   <img
+//     src="https://media.vlpt.us/images/gicomong/post/65a7ef5e-f64a-425e-b4bb-998478e5c8c9/11.png"
+//     alt="test 중">
+//   </img>
+//   `;
+
+// function loadImg() {
+//   $(".album-list").append(img);
+// }
+
+// window.onload = setTimeout(loadImg, 2000);
