@@ -10,19 +10,20 @@ $(".navbar-btn").click(function () {
   showNav = !showNav;
 });
 
-const galleryData = await pb.collection("gallery").getFullList();
-console.log(galleryData);
+const galleryData = pb.collection("gallery").getFullList();
 
-galleryData.forEach((item, idx) => {
-  let img = `
+galleryData.then((data) => {
+  data.forEach((item) => {
+    let img = `
     <li class="image-list-item" tabindex="0">
       <img class="box-item" src="${
         import.meta.env.VITE_PB_API
-      }/api/files/gallery/${item.id}/${item.image}" alt="" />
+      }/api/files/gallery/${item.id}/${item.image}" alt="${item.year} 뉴진스" />
     </li>
   `;
 
-  $(".image-list").append(img);
+    $(".image-list").append(img);
+  });
 });
 
 $(".image-list-item").click((e) => {
