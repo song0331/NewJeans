@@ -1,4 +1,5 @@
 import setTitle from "../../lib/setTitle.js";
+import pb from "../../api/pocketbase.js";
 
 setTitle("Gallery");
 
@@ -8,112 +9,35 @@ $(".navbar-btn").click(function () {
   $(".navbar").toggleClass("close", showNav);
   showNav = !showNav;
 });
-let zIdx = 0;
-$(document).on("click", ".img", function (e) {
-  $(e.target).toggleClass("full");
-  if (e.target.dataset.onoff == 1) {
-    e.target.dataset.onoff = "0";
-  } else {
-    zIdx++;
-    e.target.dataset.onoff = "1";
-    $(e.target).css("z-index", `${zIdx}`);
-  }
+
+const galleryData = await pb.collection("gallery").getFullList();
+console.log(galleryData);
+
+galleryData.forEach((item, idx) => {
+  let img = `
+    <li class="image-list-item" tabindex="0">
+      <img class="box-item" src="${
+        import.meta.env.VITE_PB_API
+      }/api/files/gallery/${item.id}/${item.image}" alt="" />
+    </li>
+  `;
+
+  $(".image-list").append(img);
 });
 
-function imgData(title) {
-  $.get(`${import.meta.env.BASE_URL}data/${title}.json`)
-    .done(function (data) {
-      for (let i = 0; i < data.length; i++) {
-        let img = `
-                  <div class="img-box ${title}">
-                     <img class="img full" src="${data[i].name}" data-onoff="1" alt="">
-                  </div>
-                  `;
-        $(".img-container-pc").append(img);
-      }
-    })
-    .fail(function () {
-      console.log("imgData - ajax 실패!");
-    });
-}
-
-function imgDataMoblie(title) {
-  $.get(`${import.meta.env.BASE_URL}data/${title}.json`)
-    .done(function (data) {
-      for (let i = 0; i < data.length; i++) {
-        let img = `
-                  <div class="img-box ${title}">
-                     <img class="img" src="${data[i].name}" data-onoff="1" alt="">
-                  </div>
-                  `;
-        $(".img-container-mobile").append(img);
-      }
-    })
-    .fail(function () {
-      console.log("imgDataMoblie - ajax 실패!");
-    });
-}
-
-function removeImg() {
-  $(".ditto").remove();
-  $(".omg").remove();
-  $(".etc").remove();
-}
-
-//imgData('ditto');
-
-$(".Ditto").click(function () {
-  removeImg();
-  imgData("ditto");
-});
-$(".OMG").click(function () {
-  removeImg();
-  imgData("omg");
-});
-$(".Etc").click(function () {
-  removeImg();
-  imgData("etc");
+$(".image-list-item").click((e) => {
+  $(".modal")[0].show();
+  $(".modal").css("background-image", `url('${e.target.src}')`);
 });
 
-$(".Ditto-m").click(function () {
-  removeImg();
-  imgDataMoblie("ditto");
-});
-$(".OMG-m").click(function () {
-  removeImg();
-  imgDataMoblie("omg");
-});
-$(".Etc-m").click(function () {
-  removeImg();
-  imgDataMoblie("etc");
+$(".image-list-item").keypress((e) => {
+  e.preventDefault();
+  $(".modal")[0].show();
+  $(".modal").css("background-image", `url('${e.target.children[0].src}')`);
 });
 
-$.get(`${import.meta.env.BASE_URL}data/ditto.json`) // pc버젼
-  .done(function (data) {
-    for (let i = 0; i < data.length; i++) {
-      let img = `
-               <div class="img-box ditto">
-                  <img class="img full" src="${data[i].name}" data-onoff="1" alt="">
-               </div>
-               `;
-      $(".img-container-pc").append(img);
-    }
-  })
-  .fail(function () {
-    console.log("get pc버젼 - ajax 실패!");
-  });
+$(".modal").click(() => $(".modal")[0].close());
 
-$.get(`${import.meta.env.BASE_URL}data/ditto.json`) // mobile버젼
-  .done(function (data) {
-    for (let i = 0; i < data.length; i++) {
-      let img = `
-               <div class="img-box ditto">
-                  <img class="img" src="${data[i].name}" data-onoff="1" alt="">
-               </div>
-               `;
-      $(".img-container-mobile").append(img);
-    }
-  })
-  .fail(function () {
-    console.log("get mobile버젼 - ajax 실패!");
-  });
+$("html").keydown((e) => {
+  if (e.keyCode === 27) $(".modal")[0].close();
+});
