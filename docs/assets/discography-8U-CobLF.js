@@ -1,4 +1,4 @@
-import"./index-DXZE7Dtf.js";import"./main-BOxjpGdl.js";import{s}from"./setTitle-DhMamm5E.js";import{p as r}from"./pocketbase-nuOjjRsH.js";s("Discography");const o=r.collection("discography").getFullList({sort:"release"});let i=[];o.then(t=>{t.forEach((a,l)=>{i.push(a.albumTrack);let e=`
+import"./main-CITXGWa4.js";import{s}from"./setTitle-DhMamm5E.js";import{p as r}from"./pocketbase-nuOjjRsH.js";s("Discography");const o=r.collection("discography").getFullList({sort:"release"});let i=[];o.then(t=>{t.forEach((a,l)=>{i.push(a.albumTrack);let e=`
     <li class="album-list-item" tabindex="0">
       <img data-index=${l} src="https://lifeishard.pockethost.io//api/files/discography/${a.id}/${a.albumCover}" alt="${a.albumName} 앨범 커버" title="${a.albumName}" />
     </li>

@@ -1,4 +1,4 @@
-import"./index-DXZE7Dtf.js";import"./main-BOxjpGdl.js";import{s as e}from"./setTitle-DhMamm5E.js";import{p as i}from"./pocketbase-nuOjjRsH.js";e("Gallery");const t=async()=>{(await i.collection("gallery").getFullList()).forEach(l=>{let a=`
+import"./main-CITXGWa4.js";import{s as e}from"./setTitle-DhMamm5E.js";import{p as i}from"./pocketbase-nuOjjRsH.js";e("Gallery");const t=async()=>{(await i.collection("gallery").getFullList()).forEach(l=>{let a=`
     <li class="image-list-item" tabindex="0">
     <img src="https://lifeishard.pockethost.io//api/files/gallery/${l.id}/${l.image}" alt="${l.year} 뉴진스" />
     </li>
