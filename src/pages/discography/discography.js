@@ -3,13 +3,6 @@ import pb from "../../api/pocketbase.js";
 
 setTitle("Discography");
 
-let showNav = false;
-$(".navbar-btn").click(function () {
-  $(".navbar").toggleClass("open", !showNav);
-  $(".navbar").toggleClass("close", showNav);
-  showNav = !showNav;
-});
-
 const albumData = pb.collection("discography").getFullList({
   sort: "release",
 });

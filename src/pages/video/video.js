@@ -2,12 +2,6 @@ import setTitle from "../../lib/setTitle.js";
 
 setTitle("Video");
 
-let showNav = false;
-$(".navbar-btn").click(function () {
-  $(".navbar").toggleClass("open", !showNav);
-  $(".navbar").toggleClass("close", showNav);
-  showNav = !showNav;
-});
 $("button").click(function (e) {
   let address = "";
   let arr = [];

@@ -2,13 +2,6 @@ import setTitle from "../../lib/setTitle.js";
 
 setTitle("Profile");
 
-let showNav = false;
-$(".navbar-btn").click(function () {
-  $(".navbar").toggleClass("open", !showNav);
-  $(".navbar").toggleClass("close", showNav);
-  showNav = !showNav;
-});
-
 $(".info").click(function (e) {
   $(e.target.nextElementSibling).toggleClass("text-opacity");
 });
