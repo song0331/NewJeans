@@ -11,7 +11,7 @@
 
 .main-bg::after {
   content: "";
-  background-image: url("https://song0331.github.io/newjeansImg/home/13.jpg");
+  background-image: url("/images/main_bg.jpg");
   background-position: bottom;
   background-size: cover;
   position: absolute;
@@ -43,7 +43,6 @@
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  /* color: white; */
   width: 100%;
   z-index: 2;
   top: 50%;
@@ -64,7 +63,7 @@
   }
 
   .main-bg::after {
-    background-image: url("https://song0331.github.io/newjeansImg/home/14.jpg");
+    background-image: url("/images/main_bg_mobile.jpg");
     background-size: cover;
     background-position: center;
   }
