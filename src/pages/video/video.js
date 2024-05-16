@@ -2,6 +2,98 @@ import setTitle from "../../lib/setTitle.js";
 
 setTitle("Video");
 
+const musicVideoData = [
+  {
+    title: "NewJeans (뉴진스) 'Attention' Official MV",
+    src: "https://img.youtube.com/vi/js1CtxSY38I/maxresdefault.jpg",
+  },
+  {
+    title: "NewJeans (뉴진스) 'Hype Boy' Official MV (MINJI ver.)",
+    src: "https://img.youtube.com/vi/Rrf8uQFvICE/maxresdefault.jpg",
+  },
+  {
+    title: "NewJeans (뉴진스) 'Hype Boy' Official MV (DANIELLE&HAERIN ver.)",
+    src: "https://img.youtube.com/vi/9wUKhEgnllc/maxresdefault.jpg",
+  },
+  {
+    title: "NewJeans (뉴진스) 'Hype Boy' Official MV (HYEIN ver.)",
+    src: "https://img.youtube.com/vi/j6r7Px6w2ik/maxresdefault.jpg",
+  },
+  {
+    title: "NewJeans (뉴진스) 'Hype Boy' Official MV (HANNI ver.)",
+    src: "https://img.youtube.com/vi/jM-K-h9gUdM/maxresdefault.jpg",
+  },
+  {
+    title: "NewJeans (뉴진스) 'Hurt' Official MV",
+    src: "https://img.youtube.com/vi/tVIXY14aJms/maxresdefault.jpg",
+  },
+  {
+    title: "NewJeans (뉴진스) 'Cookie' Official MV",
+    src: "https://img.youtube.com/vi/VOmIplFAGeg/maxresdefault.jpg",
+  },
+  {
+    title: "NewJeans (뉴진스) 'Ditto' Official MV (side A)",
+    src: "https://img.youtube.com/vi/pSUydWEqKwE/maxresdefault.jpg",
+  },
+  {
+    title: "NewJeans (뉴진스) 'Ditto' Official MV (side B)",
+    src: "https://img.youtube.com/vi/V37TaRdVUQY/maxresdefault.jpg",
+  },
+  {
+    title: "NewJeans (뉴진스) 'OMG' Official MV",
+    src: "https://img.youtube.com/vi/_ZAgIHmHLdc/maxresdefault.jpg",
+  },
+  {
+    title: "NewJeans (뉴진스) 'Zero' Official MV",
+    src: "https://img.youtube.com/vi/XIOoqJyx8E4/maxresdefault.jpg",
+  },
+  {
+    title: "NewJeans (뉴진스) 'New Jeans' Official MV",
+    src: "https://img.youtube.com/vi/kcelgrGY1h8/maxresdefault.jpg",
+  },
+  {
+    title: "NewJeans (뉴진스) 'Cool With You' Official MV (side A)",
+    src: "https://img.youtube.com/vi/zsYSSVoQnP4/maxresdefault.jpg",
+  },
+  {
+    title: "NewJeans (뉴진스) 'Cool With You' & 'Get Up' Official MV (side B)",
+    src: "https://img.youtube.com/vi/nJDMAjwxthM/maxresdefault.jpg",
+  },
+  {
+    title: "NewJeans (뉴진스) 'ASAP' Official MV",
+    src: "https://img.youtube.com/vi/dJdqn5v4Dkw/maxresdefault.jpg",
+  },
+  {
+    title: "NewJeans (뉴진스) 'Super Shy' Official MV",
+    src: "https://img.youtube.com/vi/ArmDp-zijuc/maxresdefault.jpg",
+  },
+  {
+    title: "NewJeans (뉴진스) 'ETA' Official MV",
+    src: "https://img.youtube.com/vi/jOTfBlKSQYY/maxresdefault.jpg",
+  },
+  {
+    title: "NewJeans (뉴진스) 'Bubble Gum' Official MV",
+    src: "https://img.youtube.com/vi/ft70sAYrFyY/maxresdefault.jpg",
+  },
+];
+
+musicVideoData.reverse().forEach((item) => {
+  let render = `
+    <li class="mv-list-item">
+      <p class="title">${item.title}</p>
+      <button type="button">
+        <img
+          src=${item.src}
+          alt=${item.title}
+          title=${item.title}
+        />
+      </button>
+    </li>
+  `;
+
+  $(".mv-list").append(render);
+});
+
 $("button").click(function (e) {
   let address = "";
   let arr = [];
