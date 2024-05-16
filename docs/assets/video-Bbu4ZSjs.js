@@ -1,1 +1,0 @@
-import"./main-CITXGWa4.js";import{s as o}from"./setTitle-DhMamm5E.js";o("Video");$("button").click(function(t){let r="",e=[];t.target.tagName==="IMG"?r=$(t.target).attr("src"):r=$(t.target.children[0]).attr("src"),e=r.split("/"),$(".now").attr("src",`https://www.youtube-nocookie.com/embed/${e[4]}`)});
