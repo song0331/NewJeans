@@ -39,7 +39,7 @@
 
 #### 프로필
 
-![](https://velog.velcdn.com/images/thdgusrbek/post/94b80130-374b-4a07-a1a5-be8d469d691d/image.gif)<br><br><br><br>
+![bandicam2024-05-1721-30-03-395-ezgif com-video-to-gif-converter (1)](https://github.com/song0331/NewJeans/assets/108565747/eb5bd66c-f5dd-4098-84c6-a0b8f22bad80)<br><br><br><br>
 
 #### 앨범
 
@@ -47,7 +47,7 @@
 
 #### 갤러리
 
-![](https://velog.velcdn.com/images/thdgusrbek/post/f99b159e-66de-4ab9-abe5-2c8ef9977f0e/image.gif)<br><br><br><br>
+![bandicam2024-05-1721-43-00-734-ezgif com-video-to-gif-converter](https://github.com/song0331/NewJeans/assets/108565747/00193ace-e276-4b91-a104-7dcea0cfb0f2)<br><br><br><br>
 
 #### 뮤직 비디오
 
