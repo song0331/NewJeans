@@ -1,7 +1,7 @@
 # NewJeans
 
 아이돌 그룹 뉴진스를 소개하는 반응형 웹사이트<br><br>
-![](https://velog.velcdn.com/images/thdgusrbek/post/24610de8-9657-4438-a629-4111886c63a1/image.png)
+![](https://velog.velcdn.com/images/thdgusrbek/post/ea08c9e6-b7f7-4161-afcd-c09be2864339/image.png)
 
 ---
 
@@ -13,6 +13,7 @@
 - CSS
 - JavaScript
 - JQuery
+- PocketBase
 
 ---
 
@@ -28,7 +29,7 @@
 
 ### 폴더 구조
 
-![](https://velog.velcdn.com/images/thdgusrbek/post/334b8820-1d47-4735-929e-18442e217873/image.png)
+![](https://velog.velcdn.com/images/thdgusrbek/post/783a7838-5867-49d6-b907-6de14008406e/image.png)
 
 ---
 
@@ -38,19 +39,19 @@
 
 #### 프로필
 
-![ezgif com-video-to-gif](https://github.com/HyunKyu-Song/NewJeans-/assets/108565747/b3a17c17-c6f3-466d-a887-8c943ae75bfd)<br><br><br><br>
+![](https://velog.velcdn.com/images/thdgusrbek/post/94b80130-374b-4a07-a1a5-be8d469d691d/image.gif)<br><br><br><br>
 
 #### 앨범
 
-![ezgif com-video-to-gif (4)](https://github.com/HyunKyu-Song/NewJeans-/assets/108565747/1ef88cf3-93c7-4840-9c32-ca739de9f9a1)<br><br><br><br>
+![](https://velog.velcdn.com/images/thdgusrbek/post/07e09935-c5d4-4173-a079-d45a19147ba5/image.gif)<br><br><br><br>
 
 #### 갤러리
 
-![ezgif com-video-to-gif (5)](https://github.com/HyunKyu-Song/NewJeans-/assets/108565747/8ba52912-4dfc-4cd9-94a5-eece511cc3a9)<br><br><br><br>
+![](https://velog.velcdn.com/images/thdgusrbek/post/f99b159e-66de-4ab9-abe5-2c8ef9977f0e/image.gif)<br><br><br><br>
 
 #### 뮤직 비디오
 
-![](https://velog.velcdn.com/images/thdgusrbek/post/4eb36bfb-4420-447f-9558-888c7dd724ad/image.gif)
+![](https://velog.velcdn.com/images/thdgusrbek/post/db85bf9d-39e7-47de-8ee9-b7651fdfb973/image.gif)
 
 ---
 
