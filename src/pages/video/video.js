@@ -75,6 +75,10 @@ const musicVideoData = [
     title: "NewJeans (뉴진스) 'Bubble Gum' Official MV",
     src: "https://img.youtube.com/vi/ft70sAYrFyY/maxresdefault.jpg",
   },
+  {
+    title: "NewJeans (뉴진스) 'How Sweet' Official MV",
+    src: "https://img.youtube.com/vi/Q3K0TOvTOno/maxresdefault.jpg",
+  },
 ];
 
 musicVideoData.reverse().forEach((item) => {
