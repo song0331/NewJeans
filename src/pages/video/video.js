@@ -79,6 +79,18 @@ const musicVideoData = [
     title: "NewJeans (뉴진스) 'How Sweet' Official MV",
     src: "https://img.youtube.com/vi/Q3K0TOvTOno/maxresdefault.jpg",
   },
+  {
+    title: "NewJeans (뉴진스) 'Right Now' Official MV",
+    src: "https://img.youtube.com/vi/m6pTbEz4w3o/maxresdefault.jpg",
+  },
+  {
+    title: "NewJeans (뉴진스) ‘Supernatural’ Official MV (Part.1)",
+    src: "https://img.youtube.com/vi/ZncbtRo7RXs/maxresdefault.jpg",
+  },
+  {
+    title: "NewJeans (뉴진스) ‘Supernatural’ Official MV (Part.2)",
+    src: "https://img.youtube.com/vi/A4S8zl50AdM/maxresdefault.jpg",
+  },
 ];
 
 musicVideoData.reverse().forEach((item) => {
